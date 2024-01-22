@@ -1,64 +1,109 @@
 package org.Stepdefnitions;
 
+import org.POM.EOIpom;
+import org.Uttility.Baseclass;
 import io.cucumber.java.en.*;
 
-public class EOI {
+public class EOI extends Baseclass {
+	public static EOIpom e = new EOIpom();
+
 	@Given("the user is on the EOI form page")
 	public void the_user_is_on_the_eoi_form_page() {
-	   
+		url("https://202.131.99.210:82/");
+
+		click(e.getEOI());
+
 	}
-	@When("the user selects Company Type")
-	public void the_user_selects_company_type() {
-	    
+
+	@When("the user selects Company Type as Branch of Humanitarian organization")
+	public void the_user_selects_company_type_as_branch_of_humanitarian_organization() {
+
+		click(e.getCompanytype().get(0));
 	}
+
 	@When("the user provides the following Applicant Details")
 	public void the_user_provides_the_following_applicant_details() {
-	    
+		sendkeys(e.getCompanyname(), "Testdata");
+		sendkeys(e.getCompanypoboxno(), "735686769287");
+		sendkeys(e.getCity(), "dubai");
+		sendkeys(e.getAddress(), "Testdata");
+		click(e.getCountry());
+		click(e.getCountryselect());
+		sendkeys(e.getPhone(), "98676757655");
+		sendkeys(e.getEmail(), "Anbhbhbd@gmail.com");
+		click(e.getDateofincorporation());
+		click(e.getDateofincorporationselection());
+		selectption("bytext", e.getCountryofIncorporation(), "United Arab Emirates");
+
+		sendkeys(e.getWebsite(), "www.test.com");
+		sendkeys(e.getContactPersonName(), "Testdata");
+		sendkeys(e.getContactPersonEmail(), "nbhbhbd@gmail.com");
+		sendkeys(e.getContactPersonAddress(), "Testdata");
+		selectption("bytext", e.getContactPersonNationality(), "Indian");
+
+		sendkeys(e.getContactPersonMobile(), "873676209270");
+
 	}
+
 	@When("the user enters a brief description of proposed activities")
 	public void the_user_enters_a_brief_description_of_proposed_activities() {
-	    
+		click(e.getProposedactivities());
+		click(e.getProposedactivitiesselection1());
+		click(e.getProposedactivitiesselection2());
+
 	}
+
 	@When("the user describes the services or products offered and how the business operates with the authority")
 	public void the_user_describes_the_services_or_products_offered_and_how_the_business_operates_with_the_authority() {
-	    
+		sendkeys(e.getWhatServicesOrProductsOffers(), "Testdata");
 	}
+
 	@When("the user accepts the terms and conditions")
 	public void the_user_accepts_the_terms_and_conditions() {
-	    
+		click(e.getTermAndConditions());
 	}
+
 	@Then("the user clicks on the Submit button")
 	public void the_user_clicks_on_the_submit_button() {
-	    
-	}
-	
-	
-	
-	
-	@When("the user decides to cancel the submission")
-	public void the_user_decides_to_cancel_the_submission() {
-	   
-	}
-	@When("the user clicks on the Cancel button")
-	public void the_user_clicks_on_the_cancel_button() {
-		
-	    	}
-	@Then("the system should navigate to the home page")
-	public void the_system_should_navigate_to_the_home_page() {
-	    
-	}
-	
-	
-	
-	
-	@When("the user submits the form with incomplete information")
-	public void the_user_submits_the_form_with_incomplete_information() {
-	    
-	}
-	@Then("the system should display an error message")
-	public void the_system_should_display_an_error_message() {
-	    
-	}
+		click(e.getSubmit());
 
+	}
+	@When("the user provides the following Applicant Details for Commercial")
+	public void the_user_provides_the_following_applicant_details_for_commercial() {
+		sendkeys(e.getCompanyname(), "Testdata");
+		sendkeys(e.getCompanypoboxno(), "735686769287");
+		sendkeys(e.getCity(), "dubai");
+		sendkeys(e.getAddress(), "Testdata");
+		click(e.getCountry());
+		click(e.getCountryselect());
+		sendkeys(e.getPhone(), "98676757655");
+		sendkeys(e.getEmail(), "Anbhbhbd@gmail.com");
+		sendkeys(e.getWebsite(), "www.test.com");
+		sendkeys(e.getContactPersonName(), "Testdata");
+		sendkeys(e.getContactPersonEmail(), "nbhbhbd@gmail.com");
+		sendkeys(e.getContactPersonAddress(), "Testdata");
+		selectption("bytext", e.getContactPersonNationality(), "Indian");
 
+		sendkeys(e.getContactPersonMobile(), "873676209270");
+	 
+	}
+	
+	@When("the user selects Company Type as Branch of commercial company")
+	public void the_user_selects_company_type_as_branch_of_commercial_company() {
+
+		click(e.getCompanytype().get(1));
+	}
+	
+	@When("the user selects Company Type as Commercial company FZ-LLC \\(Individual)")
+	public void the_user_selects_company_type_as_commercial_company_fz_llc_individual() {
+	  
+		click(e.getCompanytype().get(2));
+	}
+	
+	@When("the user selects Company Type as Commercial company FZ-LLC \\(Corporate)")
+	public void the_user_selects_company_type_as_commercial_company_fz_llc_corporate() {
+	 
+		click(e.getCompanytype().get(3));
+	}
+	
 }
