@@ -21,7 +21,6 @@ import org.openqa.selenium.support.ui.Select;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Baseclass {
-	
 
 	public static WebDriver driver;
 
@@ -51,6 +50,7 @@ public class Baseclass {
 			break;
 		}
 	}
+
 	public static void sendkeys(WebElement e, String data) {
 
 		try {
@@ -59,10 +59,11 @@ public class Baseclass {
 		} catch (Exception e2) {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].setAttribute('value',' " + data + " ')", e);
+			e2.printStackTrace();
 		}
 
 	}
-	
+
 	public static void click(WebElement e) {
 		try {
 			e.click();
@@ -70,19 +71,18 @@ public class Baseclass {
 		} catch (Exception e2) {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click()", e);
+			
 		}
-		
+
 	}
-	
-	
+
 	public static void Screenshot(String name) throws IOException {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File screenshotAs = ts.getScreenshotAs(OutputType.FILE);
 		File f = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\Screenshots\\" + name + ".png");
 		FileUtils.copyFile(screenshotAs, f);
 	}
-	
-	
+
 	public static void windowshandle(int windowcount) {
 		Set<String> Allid = driver.getWindowHandles();
 		int count = 1;
@@ -93,58 +93,53 @@ public class Baseclass {
 			count++;
 		}
 	}
-	
-	public static void selectption(String options ,WebElement element, Object values ) {
-		Select s= new Select(element);
+
+	public static void selectption(String options, WebElement element, Object values) {
+		Select s = new Select(element);
 		switch (options) {
 		case "byvalue":
-			s.selectByValue((String)values);
-			
+			s.selectByValue((String) values);
+
 			break;
 		case "byindex":
-			s.selectByIndex((int)values);
-			
+			s.selectByIndex((int) values);
+
 			break;
 		case "bytext":
-			s.selectByVisibleText((String)values);
+			s.selectByVisibleText((String) values);
 
 			break;
 		}
 	}
+
 	public static void gettext(WebElement e) {
 		String text = e.getText();
 
 	}
+
 	public static void url(String Url) {
 		driver.get(Url);
 
 	}
+
 	public static void BrowersQuit() {
 		driver.quit();
 
 	}
+
 	public static void refresh() {
 		driver.navigate().refresh();
 
 	}
+
 	public static void forward() {
 		driver.navigate().forward();
 
 	}
+
 	public static void backward() {
 		driver.navigate().back();
 
 	}
-	
-	
-	
-	
-
-
 
 }
-	
-	
-	
-
-
