@@ -23,22 +23,22 @@ public class EOI extends Baseclass {
 
 	@When("the user provides the following Applicant Details")
 	public void the_user_provides_the_following_applicant_details() {
-		sendkeys(e.getCompanyname(), "Testdata");
+		sendkeys(e.getCompanyname(), "Aster Pharmacy");
 		sendkeys(e.getCompanypoboxno(), "735686769287");
 		sendkeys(e.getCity(), "dubai");
-		sendkeys(e.getAddress(), "Testdata");
+		sendkeys(e.getAddress(), "ENOC site 1086 petrol pump Emirates Hills 3 Opposite to Emirates International School Meadows Dubai - United Arab Emirates");
 		click(e.getCountry());
 		click(e.getCountryselect());
 		sendkeys(e.getPhone(), "98676757655");
-		sendkeys(e.getEmail(), "Anbhbhbd@gmail.com");
+		sendkeys(e.getEmail(), "g2d0m6ztah@tippabble.com");
 		click(e.getDateofincorporation());
 		click(e.getDateofincorporationselection());
 		selectption("bytext", e.getCountryofIncorporation(), "United Arab Emirates");
 
 		sendkeys(e.getWebsite(), "www.test.com");
-		sendkeys(e.getContactPersonName(), "Testdata");
-		sendkeys(e.getContactPersonEmail(), "nbhbhbd@gmail.com");
-		sendkeys(e.getContactPersonAddress(), "Testdata");
+		sendkeys(e.getContactPersonName(), "Victor");
+		sendkeys(e.getContactPersonEmail(), "g2d0m6ztah@tippabble.com");
+		sendkeys(e.getContactPersonAddress(), "25,Arcot road,Chennai");
 		selectption("bytext", e.getContactPersonNationality(), "Indian");
 
 		sendkeys(e.getContactPersonMobile(), "873676209270");
@@ -70,18 +70,19 @@ public class EOI extends Baseclass {
 	}
 	@When("the user provides the following Applicant Details for Commercial")
 	public void the_user_provides_the_following_applicant_details_for_commercial() {
-		sendkeys(e.getCompanyname(), "Testdata");
+		sendkeys(e.getCompanyname(), "Aster Pharmacy");
 		sendkeys(e.getCompanypoboxno(), "735686769287");
 		sendkeys(e.getCity(), "dubai");
-		sendkeys(e.getAddress(), "Testdata");
+		sendkeys(e.getAddress(), "ENOC site 1086 petrol pump Emirates Hills 3 Opposite to Emirates International School Meadows Dubai - United Arab Emirates");
 		click(e.getCountry());
 		click(e.getCountryselect());
 		sendkeys(e.getPhone(), "98676757655");
-		sendkeys(e.getEmail(), "Anbhbhbd@gmail.com");
+		sendkeys(e.getEmail(), "g2d0m6ztah@tippabble.com");
+
 		sendkeys(e.getWebsite(), "www.test.com");
-		sendkeys(e.getContactPersonName(), "Testdata");
-		sendkeys(e.getContactPersonEmail(), "nbhbhbd@gmail.com");
-		sendkeys(e.getContactPersonAddress(), "Testdata");
+		sendkeys(e.getContactPersonName(), "Victor");
+		sendkeys(e.getContactPersonEmail(), "g2d0m6ztah@tippabble.com");
+		sendkeys(e.getContactPersonAddress(), "25,Arcot road,Chennai");
 		selectption("bytext", e.getContactPersonNationality(), "Indian");
 
 		sendkeys(e.getContactPersonMobile(), "873676209270");
