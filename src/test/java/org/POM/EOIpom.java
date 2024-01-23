@@ -25,7 +25,7 @@ public class EOIpom extends Baseclass {
 	private WebElement address;
 	@FindBy(id="select2-Country-container")
 	private WebElement country;
-	@FindBy(xpath="//li[text()='Belarus']")
+	@FindBy(xpath="//li[text()='United Arab Emirates']")
 	private WebElement countryselect;
 	@FindBy(id="Phone")
 	private WebElement phone;

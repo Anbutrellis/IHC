@@ -141,5 +141,9 @@ public class Baseclass {
 		driver.navigate().back();
 
 	}
+	public static String geturl() {
+		return driver.getTitle();
+
+	}
 
 }
