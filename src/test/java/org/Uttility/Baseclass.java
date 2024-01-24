@@ -58,7 +58,7 @@ public class Baseclass {
 
 		} catch (Exception e2) {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].setAttribute('value',' " + data + " ')", e);
+			js.executeScript("arguments[0].setAttribute('value','"+data+"')", e);
 			e2.printStackTrace();
 		}
 
@@ -143,6 +143,10 @@ public class Baseclass {
 	}
 	public static String geturl() {
 		return driver.getTitle();
+
+	}
+	public static String getattribute(WebElement e) {
+		return e.getAttribute("value");
 
 	}
 
