@@ -1,5 +1,7 @@
 package org.POM;
 
+import java.util.List;
+
 import org.Uttility.Baseclass;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +11,14 @@ public class R_LProcess extends Baseclass {
 	public R_LProcess() {
 		PageFactory.initElements(driver, this);
 	}
+	@FindBy(xpath="//span[text()='Login']")
+	private WebElement login;
+	@FindBy(id="username")
+	private WebElement username;
+	@FindBy(id="password")
+	private WebElement password;
+	@FindBy(xpath="//button[text()='Login']")
+	private WebElement loginbtn;
 	@FindBy(id="6018")
 	private WebElement options;
 	@FindBy(xpath="//button[@onclick='addHowDidYouHear(2)']")
@@ -51,9 +61,15 @@ public class R_LProcess extends Baseclass {
 	private WebElement ActivitiesOrServices;
 	@FindBy(id="CompanyBPTargetCountryselect")
 	private WebElement Countryselect;
+	@FindBy(xpath="//div[@id='choices--CompanyBPTargetCountryselect-item-choice-25']")
+	private WebElement country1;
+	@FindBy(xpath="//div[@id='choices--CompanyBPTargetCountryselect-item-choice-12']")
+	private WebElement country2;
+	@FindBy(xpath="//div[@id='choices--CompanyBPTargetCountryselect-item-choice-33']")
+	private WebElement country3;
 	@FindBy(id="btnAddSDGS")
 	private WebElement SDGs;
-	@FindBy(id="SDGId")
+	@FindBy(id="SDGFormSDGId")
 	private WebElement SDGDetails;
 	@FindBy(id="SDGFormActivityDetails")
 	private WebElement ActivityDetails;
@@ -77,8 +93,128 @@ public class R_LProcess extends Baseclass {
 	private WebElement FinancialPlan;
 	@FindBy(xpath="(//input[@type='file'])[12]")
 	private WebElement Annexesupload;
-	@FindBy(xpath="//button[@onclick='addFormationType(4)']")
+	@FindBy(xpath="//button[@onclick='addCompanyName(4)']")
 	private WebElement next3;
+	@FindBy(id="NoOfExistingBranches")
+	private WebElement NoOfExistingBranches;
+	@FindBy(xpath="(//input[@placeholder='Select more options'])[1]")
+	private WebElement Locationofexistingbranches;
+	@FindBy(id="choices--LocationOfExistingBranchesComma-item-choice-21")
+	private WebElement existingbranch1;
+	@FindBy(id="choices--LocationOfExistingBranchesComma-item-choice-12")
+	private WebElement existingbranch2;
+	@FindBy(id="choices--LocationOfExistingBranchesComma-item-choice-17")
+	private WebElement existingbranch3;
+	@FindBy(id="EstablishedCompany_Emirates")
+	private WebElement EstablishedCompany_Emirates;
+	@FindBy(xpath="//button[@onclick='addCompanyInformation(5)']")
+	private WebElement next4;
+	@FindBy(id="CompanyActivity")
+	private WebElement CompanyActivity;
+	@FindBy(id="choices--CompanyActivity-item-choice-2")
+	private WebElement CompanyActivitychoices1;
+	@FindBy(id="choices--CompanyActivity-item-choice-4")
+	private WebElement CompanyActivitychoices2;
+	@FindBy(id="choices--CompanyActivity-item-choice-6")
+	private WebElement CompanyActivitychoices3;
+	@FindBy(xpath="//button[@onclick='addActivities(6)']")
+	private WebElement next5;
+	@FindBy(id="InitialOfficeRequirement")
+	private WebElement InitialOfficeRequirement;
+	@FindBy(id="InitialWarehouseRequirement")
+	private WebElement InitialWarehouseRequirement;
+	@FindBy(xpath="//button[@onclick='addFacility(7)']")
+	private WebElement next6;
+	@FindBy(id="office")
+	private WebElement officespace;
+	@FindBy(id="BusinessCentre")
+	private WebElement BusinessCentrespace;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public WebElement getOfficespace() {
+		return officespace;
+	}
+	public WebElement getBusinessCentrespace() {
+		return BusinessCentrespace;
+	}
+	public WebElement getInitialOfficeRequirement() {
+		return InitialOfficeRequirement;
+	}
+	public WebElement getInitialWarehouseRequirement() {
+		return InitialWarehouseRequirement;
+	}
+	public WebElement getNext6() {
+		return next6;
+	}
+	public WebElement getCompanyActivity() {
+		return CompanyActivity;
+	}
+	public WebElement getCompanyActivitychoices1() {
+		return CompanyActivitychoices1;
+	}
+	public WebElement getCompanyActivitychoices2() {
+		return CompanyActivitychoices2;
+	}
+	public WebElement getCompanyActivitychoices3() {
+		return CompanyActivitychoices3;
+	}
+	public WebElement getNext5() {
+		return next5;
+	}
+	public WebElement getEstablishedCompany_Emirates() {
+		return EstablishedCompany_Emirates;
+	}
+	public WebElement getNext4() {
+		return next4;
+	}
+	public WebElement getNoOfExistingBranches() {
+		return NoOfExistingBranches;
+	}
+	public WebElement getLocationofexistingbranches() {
+		return Locationofexistingbranches;
+	}
+	public WebElement getExistingbranch1() {
+		return existingbranch1;
+	}
+	public WebElement getExistingbranch2() {
+		return existingbranch2;
+	}
+	public WebElement getExistingbranch3() {
+		return existingbranch3;
+	}
+	public WebElement getCountry1() {
+		return country1;
+	}
+	public WebElement getCountry2() {
+		return country2;
+	}
+	public WebElement getCountry3() {
+		return country3;
+	}
+	public WebElement getLogin() {
+		return login;
+	}
+	public WebElement getUsername() {
+		return username;
+	}
+	public WebElement getPassword() {
+		return password;
+	}
+	public WebElement getLoginbtn() {
+		return loginbtn;
+	}
 	public WebElement getOptions() {
 		return options;
 	}
