@@ -1,9 +1,10 @@
 package org.Uttility;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
-import java.net.URL;
 import java.time.Duration;
+import java.util.Properties;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
@@ -13,12 +14,17 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import net.masterthought.cucumber.json.Row;
 
 public class Baseclass {
 
@@ -28,7 +34,9 @@ public class Baseclass {
 		switch (browsername) {
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			ChromeOptions c = new ChromeOptions();
+			c.setAcceptInsecureCerts(true);
+			driver = new ChromeDriver(c);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 			break;
@@ -43,7 +51,9 @@ public class Baseclass {
 			break;
 		case "firefox":
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			FirefoxOptions f = new FirefoxOptions();
+			f.setAcceptInsecureCerts(true);
+			driver = new FirefoxDriver(f);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
@@ -52,9 +62,11 @@ public class Baseclass {
 	}
 
 	public static void sendkeys(WebElement e, String data) {
+		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(20));
 
 		try {
-			e.sendKeys(data);
+			w.until(ExpectedConditions.visibilityOf(e)).sendKeys(data);
+			
 
 		} catch (Exception e2) {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -65,13 +77,15 @@ public class Baseclass {
 	}
 
 	public static void click(WebElement e) {
+		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(20));
+
 		try {
-			e.click();
+			w.until(ExpectedConditions.elementToBeClickable(e)).click();
 
 		} catch (Exception e2) {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click()", e);
-			
+
 		}
 
 	}
@@ -141,13 +155,34 @@ public class Baseclass {
 		driver.navigate().back();
 
 	}
+
 	public static String geturl() {
 		return driver.getTitle();
 
 	}
+
 	public static String getattribute(WebElement e) {
 		return e.getAttribute("value");
 
 	}
-
+	
+	public static void loop(int Howmanytime,WebElement e) {
+		for (int i = 0; i <Howmanytime ; i++) {
+			click(e);
+		}
+	}
+	public static void Getdata(String key) {
+		String property =null;
+		try {
+		Properties p= new Properties();
+		FileReader r= new FileReader("/IHC_project/src/test/resources/config data/IHC.properties");
+		p.load(r);
+		property = p.getProperty(key);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
 }

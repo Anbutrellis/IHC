@@ -74,7 +74,7 @@ $(document).ready(function() {
   <tbody>
     <tr class="info">
       <td>IHC</td>
-      <td>22 Jan 2024, 17:24</td>
+      <td>31 Jan 2024, 15:42</td>
     </tr>
   </tbody>
 </table>
@@ -127,19 +127,19 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">@3</td>
-          <td      class="passed"    >7</td>
-          <td >0</td>
-          <td >0</td>
+          <td      class="passed"    >2</td>
+          <td      class="failed"    >1</td>
+          <td     class="skipped"   >4</td>
           <td >0</td>
           <td >0</td>
           <td class="total">7</td>
 
-          <td  class="passed"    >1</td>
           <td >0</td>
+          <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="0">0.000</td>
-          <td class="passed">Passed</td>
+          <td class="duration" data-value="14539636200">14.539</td>
+          <td class="failed">Failed</td>
         </tr>
         </tbody>
 
@@ -171,7 +171,7 @@ $(document).ready(function() {
 <div class="element">
     <div class="indention">
       <b>Feature:</b>
-      <a href="report-feature_1568537431.html">Expression of Interest (EOI) Form Submission</a>
+      <a href="report-feature_830988850.html">Expression of Interest (EOI) Form Submission</a>
     </div>
 
 
@@ -181,12 +181,12 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">14.539</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario</span>
   <span class="name">User submits EOI form successfully as the Commercial company FZ-LLC (Individual)</span>
 
@@ -197,7 +197,7 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-1" class="collapse collapsable-details ">
+  <div id="element-1" class="collapse collapsable-details  in ">
 
 
   <div class="inner-level hooks-element-before">
@@ -219,7 +219,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">org.Stepdefnitions.Hooksclass.Beforescenario()</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">23.232</span>
 
           </div>
 
@@ -236,9 +236,9 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-3">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-3">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -248,7 +248,7 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-3" class="inner-level collapse collapsable-details ">
+  <div id="steps-3" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
@@ -256,7 +256,7 @@ $(document).ready(function() {
   <span class="keyword indention">Given</span>
   <span class="name">the user is on the EOI form page</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">9.430</span>
 
 </div>
 
@@ -283,7 +283,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">the user selects Company Type as Commercial company FZ-LLC (Individual)</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.633</span>
 
 </div>
 
@@ -306,11 +306,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And failed">
   <span class="keyword indention">And</span>
   <span class="name">the user provides the following Applicant Details for Commercial</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">4.475</span>
 
 </div>
 
@@ -318,6 +318,44 @@ $(document).ready(function() {
 
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
+          <a>org.openqa.selenium.ElementNotInteractableException:</a>
+      </div>
+      <div id="msg-4" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.ElementNotInteractableException: Element &lt;option&gt; could not be scrolled into view
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [96480e29-a37e-4cd5-8bfd-3f5972a52f52, clickElement {id=e175d72b-9b76-41f6-b159-3fdf36540d83}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 122.0, moz:accessibilityChecks: false, moz:buildID: 20240118164516, moz:debuggerAddress: 127.0.0.1:27034, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 15364, moz:profile: C:\Users\TRELLI~2\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:27034/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Element: [[[[FirefoxDriver: firefox on windows (96480e29-a37e-4cd5-8bfd-3f5972a52f52)] -&gt; id: ContactPersonNationality]] -&gt; xpath: .//option[normalize-space(.) = &quot;Emirati&quot;]]
+Session ID: 96480e29-a37e-4cd5-8bfd-3f5972a52f52
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at org.openqa.selenium.support.ui.Select.setSelected(Select.java:315)
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:119)
+	at org.Uttility.Baseclass.selectption(Baseclass.java:124)
+	at org.Stepdefnitions.EOI.the_user_provides_the_following_applicant_details_for_commercial(EOI.java:95)
+	at &#10045;.the user provides the following Applicant Details for Commercial(file:///C:/Users/Trellis_User/eclipse-workspace/IHC_project/src/test/resources/features/EOI.feature:24)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -333,7 +371,7 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">the user enters a brief description of proposed activities</span>
 
@@ -360,7 +398,7 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">the user describes the services or products offered and how the business operates with the authority</span>
 
@@ -387,7 +425,7 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">the user accepts the terms and conditions</span>
 
@@ -414,7 +452,7 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">the user clicks on the Submit button</span>
 
@@ -445,7 +483,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-4">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-5">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -457,13 +495,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-4" class="inner-level collapse collapsable-details ">
+    <div id="after-5" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">org.Stepdefnitions.Hooksclass.Afterscenario(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.184</span>
 
           </div>
 

@@ -2,6 +2,10 @@ package org.Stepdefnitions;
 
 import org.POM.EOIpom;
 import org.Uttility.Baseclass;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
 import io.cucumber.java.en.*;
 
 public class EOI extends Baseclass {
@@ -9,7 +13,7 @@ public class EOI extends Baseclass {
 
 	@Given("the user is on the EOI form page")
 	public void the_user_is_on_the_eoi_form_page() {
-		url("https://202.131.99.210:82/");
+		url("https://202.131.99.210:83/");
 
 		click(e.getEOI());
 
@@ -23,23 +27,25 @@ public class EOI extends Baseclass {
 
 	@When("the user provides the following Applicant Details")
 	public void the_user_provides_the_following_applicant_details() {
-		sendkeys(e.getCompanyname(), "Aster Pharmacy");
+		sendkeys(e.getCompanyname(), "Aster Logistic");
 		sendkeys(e.getCompanypoboxno(), "735686769287");
 		sendkeys(e.getCity(), "dubai");
 		sendkeys(e.getAddress(), "ENOC site 1086 petrol pump Emirates Hills 3 Opposite to Emirates International School Meadows Dubai - United Arab Emirates");
 		click(e.getCountry());
 		click(e.getCountryselect());
 		sendkeys(e.getPhone(), "98676757655");
-		sendkeys(e.getEmail(), "g2d0m6ztah@tippabble.com");
 		click(e.getDateofincorporation());
 		click(e.getDateofincorporationselection());
-		selectption("bytext", e.getCountryofIncorporation(), "United Arab Emirates");
+		click(e.getCountryofIncorporationdropdown());
+		click(e.getUnitedArabEmirates());
 
 		sendkeys(e.getWebsite(), "www.test.com");
 		sendkeys(e.getContactPersonName(), "Victor");
-		sendkeys(e.getContactPersonEmail(), "g2d0m6ztah@tippabble.com");
+		sendkeys(e.getContactPersonEmail(), "b6reqy855u@greencafe24.com");
 		sendkeys(e.getContactPersonAddress(), "25,Arcot road,Chennai");
-		selectption("bytext", e.getContactPersonNationality(), "Indian");
+		//selectption("bytext", e.getContactPersonNationality(), "Emirati");
+		click(e.getContactPersonNationality());
+		click(e.getContactPersonNationalityselect());
 
 		sendkeys(e.getContactPersonMobile(), "873676209270");
 
@@ -66,6 +72,7 @@ public class EOI extends Baseclass {
 	@Then("the user clicks on the Submit button")
 	public void the_user_clicks_on_the_submit_button() {
 		click(e.getSubmit());
+		
 
 	}
 	@When("the user provides the following Applicant Details for Commercial")
@@ -76,14 +83,15 @@ public class EOI extends Baseclass {
 		sendkeys(e.getAddress(), "ENOC site 1086 petrol pump Emirates Hills 3 Opposite to Emirates International School Meadows Dubai - United Arab Emirates");
 		click(e.getCountry());
 		click(e.getCountryselect());
+		
 		sendkeys(e.getPhone(), "98676757655");
-		sendkeys(e.getEmail(), "g2d0m6ztah@tippabble.com");
 
 		sendkeys(e.getWebsite(), "www.test.com");
 		sendkeys(e.getContactPersonName(), "Victor");
-		sendkeys(e.getContactPersonEmail(), "g2d0m6ztah@tippabble.com");
+		sendkeys(e.getContactPersonEmail(), "b6reqy855u@greencafe24.com");
 		sendkeys(e.getContactPersonAddress(), "25,Arcot road,Chennai");
-		selectption("bytext", e.getContactPersonNationality(), "Indian");
+		click(e.getContactPersonNationality());
+		click(e.getContactPersonNationalityselect());
 
 		sendkeys(e.getContactPersonMobile(), "873676209270");
 	 

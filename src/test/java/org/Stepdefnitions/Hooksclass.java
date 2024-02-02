@@ -11,6 +11,7 @@ import io.cucumber.java.Scenario;
 public class Hooksclass extends Baseclass {
 	@After
 	public static void Afterscenario(Scenario sc) throws IOException {
+		//BrowersQuit();
 		Screenshot(sc.getName());
 		
 		
@@ -19,7 +20,7 @@ public class Hooksclass extends Baseclass {
 	@Before
 	public static void Beforescenario() {
 		
-		Browerlauch("edge");
+		Browerlauch("firefox");
 		
 	}
 
