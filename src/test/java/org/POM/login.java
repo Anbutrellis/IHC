@@ -57,6 +57,5 @@ public class login extends Baseclass{
 	public WebElement getLoginbtn() {
 		return loginbtn;
 	}
-	
 
 }

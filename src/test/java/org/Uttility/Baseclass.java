@@ -19,6 +19,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -63,39 +64,53 @@ public class Baseclass {
 
 	public static void sendkeys(WebElement e, String data) {
 		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(20));
-
+		w.until(ExpectedConditions.visibilityOf(e));
 		try {
-			w.until(ExpectedConditions.visibilityOf(e)).sendKeys(data);
+			e.sendKeys(data);
 			
 
 		} catch (Exception e2) {
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].setAttribute('value','"+data+"')", e);
+			jsSendkeys(data, e);
+			e2.printStackTrace();
+		}
+
+	}
+	public static void jsSendkeys(String data,WebElement e) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].setAttribute('value','"+data+"')", e);
+		
+
+	}
+	public static void jsclick(WebElement e) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click()", e);
+		
+		
+	}
+
+	public static void click(WebElement e) {
+		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(20));
+		w.until(ExpectedConditions.elementToBeClickable(e));
+		try {
+			e.click();
+
+		} catch (Exception e2) {
+			jsclick(e);
 			e2.printStackTrace();
 		}
 
 	}
 
-	public static void click(WebElement e) {
-		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(20));
-
-		try {
-			w.until(ExpectedConditions.elementToBeClickable(e)).click();
-
-		} catch (Exception e2) {
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].click()", e);
-
-		}
-
-	}
-
 	public static void Screenshot(String name) throws IOException {
-		TakesScreenshot ts = (TakesScreenshot) driver;
+		try{
+			TakesScreenshot ts = (TakesScreenshot) driver;
 		File screenshotAs = ts.getScreenshotAs(OutputType.FILE);
 		File f = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\Screenshots\\" + name + ".png");
 		FileUtils.copyFile(screenshotAs, f);
+	}catch (Exception e) {
+		e.printStackTrace();
 	}
+		}
 
 	public static void windowshandle(int windowcount) {
 		Set<String> Allid = driver.getWindowHandles();
@@ -126,9 +141,9 @@ public class Baseclass {
 		}
 	}
 
-	public static void gettext(WebElement e) {
+	public static String gettext(WebElement e) {
 		String text = e.getText();
-
+return text;
 	}
 
 	public static void url(String Url) {
@@ -181,6 +196,29 @@ public class Baseclass {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+	public static void Actionclass(String options,WebElement e) {
+		Actions a = new Actions(driver);
+		switch (options) {
+		
+		case "movetoelementclick":
+			a.moveToElement(e).click().perform();
+			break;
+		case "doubleclick":
+			a.doubleClick().perform();
+
+		default:
+			break;
+		}
+
+	}
+	public static void sleep(int sec) {
+		try {
+			Thread.sleep(sec);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 	
 	

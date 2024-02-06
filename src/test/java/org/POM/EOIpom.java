@@ -38,7 +38,7 @@ public class EOIpom extends Baseclass {
 	private WebElement email;
 	@FindBy(id="DateOfIncorporation")
 	private WebElement dateofincorporation;
-	@FindBy(xpath="//span[@class='flatpickr-day today']")
+	@FindBy(xpath="//td[@class='today day highlight-today']")
 	private WebElement dateofincorporationselection;
 	@FindBy(xpath="//span[@id='select2-CountryofIncorporationId-container']")
 	private WebElement CountryofIncorporationdropdown;
@@ -56,7 +56,7 @@ public class EOIpom extends Baseclass {
 	
 	@FindBy(xpath="//span[@class='select2 select2-container select2-container--default form-control']")
 	private WebElement ContactPersonNationality;
-	@FindBy(xpath="//li[@data-select2-id='select2-ContactPersonNationality-result-fewh-4']")
+	@FindBy(xpath="//li[text()='Emirati']")
 	private WebElement ContactPersonNationalityselect;
 	
 	

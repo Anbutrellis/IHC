@@ -43,7 +43,7 @@ Feature: Verify the Functionality of the Registration and Licensing Process
   Scenario: Verify The Functionality of the	Compliance User Approval
   
   Given The user has to Navigate to the IHC login page
-  When 	The user has to login with a valid user crential for	Compliance User Approval
+  When 	The user has to login with a valid user crential for	Compliance User 
   And   The user has to click the  Registration/Renewal dropdown and click the Request List
   And 	The user has to click the action of the eye icon for the required user to be approved
   Then 	The user has go to the feedback tab for give Compliance feedback and verify it
@@ -53,11 +53,34 @@ Feature: Verify the Functionality of the Registration and Licensing Process
   Scenario: Verify The Functionality of the Finance Audit User Approval
   
   Given The user has to Navigate to the IHC login page
-  When 	The user has to Login with a valid user crential for Finance Audit User Approval
+  When 	The user has to Login with a valid user crential for Finance Audit User
+  And 	The user has to click the action of the eye icon for the required user to be approved
+  And 	The user has go to the click Feedback tab and the Feedback form will be displayed with the number of days left for approval
+  And 	The user has to Click on the submit button after you have completed the form and digitally signed your feedback
+  Then  The user has to verify the completed the Finance Audit Feedback and able to download the PDF
   
   
+  @12
+  Scenario: Verify The Functionality of the Registrar User Approval
   
+  Given The user has to Navigate to the IHC login page
+  When 	The user has to Login with a valid user crential for Registrar User
+  And 	The user has to click the  Registration/Renewal dropdown and click the Request List
+  And 	The user has to click the action of the eye icon for the required user to be approved
+  And 	The user has to click Feedback tab able to view the three requests to review National Security Submission, MOFAIC Submission and IACAD Submission will be displayed with the number of days left for approval
+  And   The user has to Approve the request for National Security Submission, MOFAIC Submission and IACAD Submission
+  Then 	The user has to make the final approval for the Application and give remark for it 
   
+  @13
+  Scenario: Verify The Functionality of the Choosing Property by Organization User
+  
+  Given The user has to Navigate to the Organization login page
+  When 	The user has to login with a valid user crential for Organization User
+  And 	The user has to go the profile and click Documents
+  And 	The user has to upload the required Documents 
+  And 	The user has to Click Facility tab and select the required building from the Building drop-down
+	And 	The user has to Select the required floor among the grey colored floors and once selected, the floor color will turn green
+  Then 	The user has to	Click Add to Cart after selecting one floor after confirm the order
   
   
   

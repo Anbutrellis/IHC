@@ -61,7 +61,7 @@ public class MemberEnquiryRegistration extends Baseclass {
 	private WebElement VisionAndMision;
 	@FindBy(id = "ActivitiesOrServices")
 	private WebElement ActivitiesOrServices;
-	@FindBy(id = "CompanyBPTargetCountryselect")
+	@FindBy(xpath = "(//input[@class='choices__input choices__input--cloned'])[1]")
 	private WebElement Countryselect;
 	@FindBy(xpath = "//div[@id='choices--CompanyBPTargetCountryselect-item-choice-25']")
 	private WebElement country1;
@@ -99,7 +99,7 @@ public class MemberEnquiryRegistration extends Baseclass {
 	private WebElement next3;
 	@FindBy(id = "NoOfExistingBranches")
 	private WebElement NoOfExistingBranches;
-	@FindBy(xpath = "(//input[@placeholder='Select more options'])[1]")
+	@FindBy(xpath = "(//input[@class='choices__input choices__input--cloned'])[2]")
 	private WebElement Locationofexistingbranches;
 	@FindBy(id = "choices--LocationOfExistingBranchesComma-item-choice-21")
 	private WebElement existingbranch1;
@@ -111,7 +111,7 @@ public class MemberEnquiryRegistration extends Baseclass {
 	private WebElement EstablishedCompany_Emirates;
 	@FindBy(xpath = "//button[@onclick='addCompanyInformation(5)']")
 	private WebElement next4;
-	@FindBy(id = "CompanyActivity")
+	@FindBy(xpath = "(//input[@class='choices__input choices__input--cloned'])[3]")
 	private WebElement CompanyActivity;
 	@FindBy(id = "choices--CompanyActivity-item-choice-2")
 	private WebElement CompanyActivitychoices1;
