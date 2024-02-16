@@ -13,7 +13,7 @@ public class EOI extends Baseclass {
 
 	@Given("the user is on the EOI form page")
 	public void the_user_is_on_the_eoi_form_page() {
-		url("https://202.131.99.210:83/");
+		url("https://202.131.99.210:82/");
 
 		click(e.getEOI());
 
@@ -42,7 +42,7 @@ public class EOI extends Baseclass {
 
 		sendkeys(e.getWebsite(), "www.test.com");
 		sendkeys(e.getContactPersonName(), "Victor");
-		sendkeys(e.getContactPersonEmail(), "2tlv5xspp7@bloheyz.com");
+		sendkeys(e.getContactPersonEmail(), "t3xvhq33ds@skygazerhub.com");
 		sendkeys(e.getContactPersonAddress(), "25,Arcot road,Chennai");
 		click(e.getContactPersonNationality());
 		click(e.getContactPersonNationalityselect());

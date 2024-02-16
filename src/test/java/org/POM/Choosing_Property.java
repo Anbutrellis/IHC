@@ -46,6 +46,27 @@ public class Choosing_Property extends Baseclass {
 	private WebElement savebtn;
 	@FindBy(id = "Rolenamespan")
 	private WebElement verifyusername;
+	@FindBy(id = "swal2-title")
+	private WebElement verifysuccess;
+	@FindBy(xpath = "//button[text()='OK']")
+	private WebElement okbtn;
+	@FindBy(xpath="//a[@href='#project-facility']")
+	private WebElement Facilitytab;
+	@FindBy(id="office-space")
+	private WebElement officespace;
+	@FindBy(id="buildingList")
+	private WebElement buildingselect;
+	@FindBy(xpath="(//input[@class='choices__input choices__input--cloned'])[2]")
+	private WebElement floorselect;
+	
+	
+	
+	public WebElement getVerifysuccess() {
+		return verifysuccess;
+	}
+	public WebElement getOkbtn() {
+		return okbtn;
+	}
 	public WebElement getLogin() {
 		return login;
 	}

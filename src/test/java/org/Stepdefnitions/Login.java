@@ -14,7 +14,7 @@ public class Login extends Baseclass {
 
 	@Given("the User is on the IHC Homepage")
 	public void the_user_is_on_the_ihc_homepage() {
-		url("https://202.131.99.210:83/");
+		url("https://202.131.99.210:82/");
 
 	}
 
@@ -28,7 +28,7 @@ public class Login extends Baseclass {
 
 	@When("the user enter the vaid crendential on the username and password")
 	public void the_user_enter_the_vaid_crendential_on_the_username_and_password() {
-		sendkeys(l.getUsername(), "2tlv5xspp7@bloheyz.com");
+		sendkeys(l.getUsername(), "t3xvhq33ds@skygazerhub.com");
 		sendkeys(l.getPassword(), "User@IHC@@2023$$");
 
 	}

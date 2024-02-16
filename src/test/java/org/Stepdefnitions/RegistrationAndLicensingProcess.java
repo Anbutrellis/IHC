@@ -309,27 +309,25 @@ public class RegistrationAndLicensingProcess extends Baseclass {
 		sendkeys(e.getDocument3(), "E:\\IHC Project details\\ihc documents\\Deed of Trust.pdf");
 		sendkeys(e.getDocument4(), "E:\\IHC Project details\\ihc documents\\Good Standing Certificate of the headquarter's.pdf");
 		sendkeys(e.getDocument5(), "E:\\IHC Project details\\ihc documents\\certificate-of-incumbency.pdf");
-		sendkeys(e.getDocuments(), "E:\\IHC Project details\\ihc documents\\passport.pdf");
-		sendkeys(e.getDocuments(), "E:\\IHC Project details\\ihc documents\\Annexes.pdf");
-		sendkeys(e.getDocuments(), "E:\\IHC Project details\\ihc documents\\Annexes.pdf");
-		sendkeys(e.getDocuments(), "E:\\IHC Project details\\ihc documents\\ImportLicense.pdf");
-		sendkeys(e.getDocuments(), "E:\\IHC Project details\\ihc documents\\Annexes.pdf");
-		
+		sendkeys(e.getDocument6(), "E:\\IHC Project details\\ihc documents\\passport.pdf");
+		sendkeys(e.getDocument7(), "E:\\IHC Project details\\ihc documents\\Annexes.pdf");
+		sendkeys(e.getDocument8(), "E:\\IHC Project details\\ihc documents\\Annexes.pdf");
+		sendkeys(e.getDocument9(), "E:\\IHC Project details\\ihc documents\\ImportLicense.pdf");
+		sendkeys(e.getDocument10(), "E:\\IHC Project details\\ihc documents\\Annexes.pdf");
+		click(e.getSavebtn());
+		Assert.assertEquals("Verify the Sucessfully Approval", "Success", e.getVerifysuccess().getText());
+		click(e.getOkbtn());
+
 	}
 	@When("The user has to Click Facility tab and select the required building from the Building drop-down")
 	public void the_user_has_to_click_facility_tab_and_select_the_required_building_from_the_building_drop_down() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	
 	}
 	@When("The user has to Select the required floor among the grey colored floors and once selected, the floor color will turn green")
 	public void the_user_has_to_select_the_required_floor_among_the_grey_colored_floors_and_once_selected_the_floor_color_will_turn_green() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
 	}
 	@Then("The user has to	Click Add to Cart after selecting one floor after confirm the order")
 	public void the_user_has_to_click_add_to_cart_after_selecting_one_floor_after_confirm_the_order() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
 	}
 
 	

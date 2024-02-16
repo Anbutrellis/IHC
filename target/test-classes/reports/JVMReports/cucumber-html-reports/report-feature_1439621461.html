@@ -74,7 +74,7 @@ $(document).ready(function() {
   <tbody>
     <tr class="info">
       <td>IHC</td>
-      <td>05 Feb 2024, 15:39</td>
+      <td>14 Feb 2024, 15:20</td>
     </tr>
   </tbody>
 </table>
@@ -127,9 +127,9 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">Verify the Functionality of the Member Enquiry Registration</td>
-          <td      class="passed"    >10</td>
+          <td      class="passed"    >4</td>
           <td      class="failed"    >1</td>
-          <td     class="skipped"   >5</td>
+          <td     class="skipped"   >11</td>
           <td >0</td>
           <td >0</td>
           <td class="total">16</td>
@@ -138,7 +138,7 @@ $(document).ready(function() {
           <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="44830974000">44.830</td>
+          <td class="duration" data-value="44648712600">44.648</td>
           <td class="failed">Failed</td>
         </tr>
         </tbody>
@@ -191,7 +191,7 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">44.830</span>
+  <span class="lead-duration duration">44.648</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
@@ -229,7 +229,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">org.Stepdefnitions.Hooksclass.Beforescenario()</span>
 
-  <span class="lead-duration duration">10.582</span>
+  <span class="lead-duration duration">11.026</span>
 
           </div>
 
@@ -266,7 +266,7 @@ $(document).ready(function() {
   <span class="keyword indention">Given</span>
   <span class="name">The user have login with vaild credential organization user</span>
 
-  <span class="lead-duration duration">19.581</span>
+  <span class="lead-duration duration">24.004</span>
 
 </div>
 
@@ -293,7 +293,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">The user navigate to the registration &amp; renewel steps</span>
 
-  <span class="lead-duration duration">0.027</span>
+  <span class="lead-duration duration">0.162</span>
 
 </div>
 
@@ -370,11 +370,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And failed">
   <span class="keyword indention">And</span>
   <span class="name">The user have to upload the requried documents for company branch</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">20.481</span>
 
 </div>
 
@@ -382,6 +382,28 @@ $(document).ready(function() {
 
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
+          <a>org.openqa.selenium.TimeoutException:</a>
+      </div>
+      <div id="msg-4" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[FirefoxDriver: firefox on windows (589dddcb-0e19-439e-a1c6-426e12a36395)] -&gt; xpath: (//input[@type='file'])[1]] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 122.0.1, moz:accessibilityChecks: false, moz:buildID: 20240205133611, moz:debuggerAddress: 127.0.0.1:8924, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 17148, moz:profile: C:\Users\TRELLI~2\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:8924/devtool..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 589dddcb-0e19-439e-a1c6-426e12a36395
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at org.Uttility.Baseclass.sendkeys(Baseclass.java:67)
+	at org.Stepdefnitions.MemberEnquiryRegistrationProcess.the_user_have_to_upload_the_requried_documents_for_company_branch(MemberEnquiryRegistrationProcess.java:38)
+	at &#10045;.The user have to upload the requried documents for company branch(file:///C:/Users/Trellis_User/eclipse-workspace/IHC_project/src/test/resources/features/MemberEnquiryRegistration.feature:10)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -397,7 +419,7 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">The user have to fill the requried fields in the Business plan</span>
 
@@ -424,11 +446,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">The user have to fill the requried fields in the Company Information</span>
 
-  <span class="lead-duration duration">0.108</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -451,11 +473,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">The user have to select the Business Activities</span>
 
-  <span class="lead-duration duration">3.417</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -478,11 +500,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">The user have to select the types of facility and choose office space Requirement</span>
 
-  <span class="lead-duration duration">1.513</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -505,7 +527,7 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">The user have to select the employment visa requirements at Sum of the office space like per visa <span class="argument">10</span> Sq.m</span>
 
@@ -532,11 +554,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And failed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">The user have to fill the UBO information in the UBO form</span>
 
-  <span class="lead-duration duration">20.180</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -544,28 +566,6 @@ $(document).ready(function() {
 
 
 
-
-  <div class="inner-level">
-    <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
-          <a>org.openqa.selenium.TimeoutException:</a>
-      </div>
-      <div id="msg-4" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[FirefoxDriver: firefox on windows (e16c27d9-bc7b-414b-9fb0-d90489c00fd4)] -&gt; xpath: //button[@onclick='saveUBODetails(9)']] (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: '4.16.1', revision: '9b4c83354e'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 122.0, moz:accessibilityChecks: false, moz:buildID: 20240118164516, moz:debuggerAddress: 127.0.0.1:40317, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 17056, moz:profile: C:\Users\TRELLI~2\AppData\L..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:40317/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: e16c27d9-bc7b-414b-9fb0-d90489c00fd4
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
-	at org.Uttility.Baseclass.click(Baseclass.java:93)
-	at org.Stepdefnitions.MemberEnquiryRegistrationProcess.the_user_have_to_fill_the_ubo_information_in_the_ubo_form(MemberEnquiryRegistrationProcess.java:108)
-	at &#10045;.The user have to fill the UBO information in the UBO form(file:///C:/Users/Trellis_User/eclipse-workspace/IHC_project/src/test/resources/features/MemberEnquiryRegistration.feature:16)
-</pre>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -738,7 +738,7 @@ Session ID: e16c27d9-bc7b-414b-9fb0-d90489c00fd4
             <span class="keyword indention">After</span>
               <span class="location name">org.Stepdefnitions.Hooksclass.Afterscenario(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.178</span>
+  <span class="lead-duration duration">0.149</span>
 
           </div>
 
@@ -751,13 +751,13 @@ Session ID: e16c27d9-bc7b-414b-9fb0-d90489c00fd4
   <div class="embedding indention">
     <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
       <a>Screenshot</a>
-      <a href="embeddings/embedding_1751234912.png" download target="_blank">
+      <a href="embeddings/embedding_-2113632196.png" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
     <div id="embedding-6" class="collapse collapsable-details ">
       <div class="embedding-content">
-        <img src="embeddings/embedding_1751234912.png">
+        <img src="embeddings/embedding_-2113632196.png">
       </div>
     </div>
   </div>

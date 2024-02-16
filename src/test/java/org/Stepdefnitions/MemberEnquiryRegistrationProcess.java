@@ -10,12 +10,12 @@ public class MemberEnquiryRegistrationProcess extends Baseclass{
 	public static MemberEnquiryRegistration r=new MemberEnquiryRegistration();
 	@Given("The user have login with vaild credential organization user")
 	public void the_user_have_login_with_vaild_credential_organization_user() throws InterruptedException {
-		url("https://202.131.99.210:83/");
+		url("https://202.131.99.210:82/");
 		click(r.getLogin());
-		sendkeys(r.getUsername(), "2tlv5xspp7@bloheyz.com");
-		sendkeys(r.getPassword(), "Trellis@123");
+		sendkeys(r.getUsername(), "t3xvhq33ds@skygazerhub.com");
+		sendkeys(r.getPassword(), "Trellis@12345");
 		click(r.getLoginbtn());
-		Thread.sleep(8000);
+		
 	}
 	@When("The user navigate to the registration & renewel steps")
 	public void the_user_navigate_to_the_registration_renewel_steps() {
@@ -24,13 +24,13 @@ public class MemberEnquiryRegistrationProcess extends Baseclass{
 	}
 	@When("The user have to choose the How did you here about us options")
 	public void the_user_have_to_choose_the_how_did_you_here_about_us_options() {
-		//click(r.getOptions());
-		//click(r.getNext1());
+		click(r.getOptions());
+		click(r.getNext1());
 	}
 	@When("The user have to choose the formation type and it display the requried documents")
 	public void the_user_have_to_choose_the_formation_type_and_it_display_the_requried_documents() {
-		//click(r.getFormationtype());
-		//click(r.getNext2());
+		click(r.getFormationtype());
+		click(r.getNext2());
 	}
 	@When("The user have to upload the requried documents for company branch")
 	public void the_user_have_to_upload_the_requried_documents_for_company_branch() {
@@ -49,38 +49,38 @@ public class MemberEnquiryRegistrationProcess extends Baseclass{
 	}
 	@When("The user have to fill the requried fields in the Business plan")
 	public void the_user_have_to_fill_the_requried_fields_in_the_business_plan() {
-//		click(r.getBusinesstab());
-//		sendkeys(r.getExecutiveSummary(), "Executive Summary");
-//		sendkeys(r.getVisionAndMision(), "Vision & Mission");
-//		sendkeys(r.getActivitiesOrServices(), "The Activities/Services");
-//		click(r.getSDGs());
-//		selectption("byvalue", r.getSDGDetails(), "3");
-//		sendkeys(r.getActivityDetails(), "Activity Details");
-//		click(r.getSavebtn());
-//		click(r.getCountryselect());
-//		click(r.getCountry1());
-//		click(r.getCountry2());
-//		click(r.getCountry3());
-//		sendkeys(r.getStrategicAlliances(), "Strategic Alliances");
-//		sendkeys(r.getVendors(), "Vendors");
-//		sendkeys(r.getTeamDetails(), "Team");
-//		sendkeys(r.getProfessionalSupport(), "Professional Support");
-//		sendkeys(r.getFundRaising(), "Fundraising");
-//		sendkeys(r.getBoardOfAdvisors(), "Board Of Advisors");
-//		sendkeys(r.getAssumptions(), "Assumptions");
-//		sendkeys(r.getFinancialPlan(), "Financial Plan – Budget");
-//	sendkeys(r.getAnnexesupload(), "E:\\IHC Project details\\ihc documents\\Annexes.pdf");
-	//click(r.getNext3());
+		click(r.getBusinesstab());
+		sendkeys(r.getExecutiveSummary(), "Executive Summary");
+		sendkeys(r.getVisionAndMision(), "Vision & Mission");
+		sendkeys(r.getActivitiesOrServices(), "The Activities/Services");
+		click(r.getSDGs());
+		selectption("byvalue", r.getSDGDetails(), "3");
+		sendkeys(r.getActivityDetails(), "Activity Details");
+		click(r.getSavebtn());
+		click(r.getCountryselect());
+		click(r.getCountry1());
+		click(r.getCountry2());
+		click(r.getCountry3());
+		sendkeys(r.getStrategicAlliances(), "Strategic Alliances");
+		sendkeys(r.getVendors(), "Vendors");
+		sendkeys(r.getTeamDetails(), "Team");
+		sendkeys(r.getProfessionalSupport(), "Professional Support");
+		sendkeys(r.getFundRaising(), "Fundraising");
+		sendkeys(r.getBoardOfAdvisors(), "Board Of Advisors");
+		sendkeys(r.getAssumptions(), "Assumptions");
+		sendkeys(r.getFinancialPlan(), "Financial Plan – Budget");
+	sendkeys(r.getAnnexesupload(), "E:\\IHC Project details\\ihc documents\\Annexes.pdf");
+	click(r.getNext3());
 		
 	}
 	@When("The user have to fill the requried fields in the Company Information")
 	public void the_user_have_to_fill_the_requried_fields_in_the_company_information() {
-//		sendkeys(r.getNoOfExistingBranches(),"3");
-//		click(r.getLocationofexistingbranches());
-//		click(r.getExistingbranch1());
-//		click(r.getExistingbranch2());
-//		click(r.getExistingbranch3());
-//		sendkeys(r.getEstablishedCompany_Emirates(), "getEstablishedCompanyEmirates");
+		sendkeys(r.getNoOfExistingBranches(),"3");
+		click(r.getLocationofexistingbranches());
+		click(r.getExistingbranch1());
+		click(r.getExistingbranch2());
+		click(r.getExistingbranch3());
+		sendkeys(r.getEstablishedCompany_Emirates(), "getEstablishedCompanyEmirates");
 		click(r.getNext4());
 		
 	}
