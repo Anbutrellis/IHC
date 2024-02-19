@@ -1,9 +1,10 @@
 package org.Uttility;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
-import java.net.URL;
 import java.time.Duration;
+import java.util.Properties;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
@@ -13,12 +14,18 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import net.masterthought.cucumber.json.Row;
 
 public class Baseclass {
 
@@ -28,7 +35,9 @@ public class Baseclass {
 		switch (browsername) {
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			ChromeOptions c = new ChromeOptions();
+			c.setAcceptInsecureCerts(true);
+			driver = new ChromeDriver(c);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 			break;
@@ -43,7 +52,9 @@ public class Baseclass {
 			break;
 		case "firefox":
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			FirefoxOptions f = new FirefoxOptions();
+			f.setAcceptInsecureCerts(true);
+			driver = new FirefoxDriver(f);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
@@ -52,36 +63,54 @@ public class Baseclass {
 	}
 
 	public static void sendkeys(WebElement e, String data) {
-
+		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(20));
+		w.until(ExpectedConditions.visibilityOf(e));
 		try {
 			e.sendKeys(data);
+			
 
 		} catch (Exception e2) {
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].setAttribute('value','"+data+"')", e);
+			jsSendkeys(data, e);
+			e2.printStackTrace();
+		}
+
+	}
+	public static void jsSendkeys(String data,WebElement e) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].setAttribute('value','"+data+"')", e);
+		
+
+	}
+	public static void jsclick(WebElement e) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click()", e);
+		
+		
+	}
+
+	public static void click(WebElement e) {
+		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(20));
+		w.until(ExpectedConditions.elementToBeClickable(e));
+		try {
+			e.click();
+
+		} catch (Exception e2) {
+			jsclick(e);
 			e2.printStackTrace();
 		}
 
 	}
 
-	public static void click(WebElement e) {
-		try {
-			e.click();
-
-		} catch (Exception e2) {
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].click()", e);
-			
-		}
-
-	}
-
 	public static void Screenshot(String name) throws IOException {
-		TakesScreenshot ts = (TakesScreenshot) driver;
+		try{
+			TakesScreenshot ts = (TakesScreenshot) driver;
 		File screenshotAs = ts.getScreenshotAs(OutputType.FILE);
 		File f = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\Screenshots\\" + name + ".png");
 		FileUtils.copyFile(screenshotAs, f);
+	}catch (Exception e) {
+		e.printStackTrace();
 	}
+		}
 
 	public static void windowshandle(int windowcount) {
 		Set<String> Allid = driver.getWindowHandles();
@@ -112,9 +141,9 @@ public class Baseclass {
 		}
 	}
 
-	public static void gettext(WebElement e) {
+	public static String gettext(WebElement e) {
 		String text = e.getText();
-
+return text;
 	}
 
 	public static void url(String Url) {
@@ -141,13 +170,57 @@ public class Baseclass {
 		driver.navigate().back();
 
 	}
+
 	public static String geturl() {
 		return driver.getTitle();
 
 	}
+
 	public static String getattribute(WebElement e) {
 		return e.getAttribute("value");
 
 	}
+	
+	public static void loop(int Howmanytime,WebElement e) {
+		for (int i = 0; i <Howmanytime ; i++) {
+			click(e);
+		}
+	}
+	public static void Getdata(String key) {
+		String property =null;
+		try {
+		Properties p= new Properties();
+		FileReader r= new FileReader("/IHC_project/src/test/resources/config data/IHC.properties");
+		p.load(r);
+		property = p.getProperty(key);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void Actionclass(String options,WebElement e) {
+		Actions a = new Actions(driver);
+		switch (options) {
+		
+		case "movetoelementclick":
+			a.moveToElement(e).click().perform();
+			break;
+		case "doubleclick":
+			a.doubleClick().perform();
 
+		default:
+			break;
+		}
+
+	}
+	public static void sleep(int sec) {
+		try {
+			Thread.sleep(sec);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	
+	
 }

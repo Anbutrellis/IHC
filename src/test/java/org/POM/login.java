@@ -15,7 +15,7 @@ public class login extends Baseclass{
 	private WebElement username;
 	@FindBy(id="password")
 	private WebElement password;
-	@FindBy(xpath="//button[text()='login']")
+	@FindBy(xpath="//button[text()='Login']")
 	private WebElement loginbtn;
 	@FindBy(id="newPassword")
 	private WebElement Newpassword;
@@ -25,9 +25,14 @@ public class login extends Baseclass{
 	private WebElement relogin;
 	@FindBy(xpath="//p[text()='Your password has been changed successfully!']")
 	private WebElement verifiypasswordreset;
+	@FindBy(id="oldPassword")
+	private WebElement oldPassword;
 	
 	
 	
+	public WebElement getOldPassword() {
+		return oldPassword;
+	}
 	public WebElement getVerifiypasswordreset() {
 		return verifiypasswordreset;
 	}
@@ -52,6 +57,5 @@ public class login extends Baseclass{
 	public WebElement getLoginbtn() {
 		return loginbtn;
 	}
-	
 
 }

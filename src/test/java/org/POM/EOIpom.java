@@ -23,20 +23,27 @@ public class EOIpom extends Baseclass {
 	private WebElement city;
 	@FindBy(id="Address")
 	private WebElement address;
+	
+	
+	
 	@FindBy(id="select2-Country-container")
 	private WebElement country;
 	@FindBy(xpath="//li[text()='United Arab Emirates']")
 	private WebElement countryselect;
+	
+	
 	@FindBy(id="Phone")
 	private WebElement phone;
 	@FindBy(id="EmailAddress")
 	private WebElement email;
 	@FindBy(id="DateOfIncorporation")
 	private WebElement dateofincorporation;
-	@FindBy(xpath="//span[@class='flatpickr-day today']")
+	@FindBy(xpath="//td[@class='today day highlight-today']")
 	private WebElement dateofincorporationselection;
-	@FindBy(id="CountryofIncorporationId")
-	private WebElement CountryofIncorporation;
+	@FindBy(xpath="//span[@id='select2-CountryofIncorporationId-container']")
+	private WebElement CountryofIncorporationdropdown;
+	@FindBy (xpath="//li[text()='United Arab Emirates']")
+	private WebElement UnitedArabEmirates;
 	@FindBy(id="Website")
 	private WebElement Website;
 	@FindBy(id="ContactPersonName")
@@ -45,8 +52,14 @@ public class EOIpom extends Baseclass {
 	private WebElement ContactPersonEmail;
 	@FindBy(id="ContactPersonAddress")
 	private WebElement ContactPersonAddress;
-	@FindBy(id="ContactPersonNationality")
+	
+	
+	@FindBy(xpath="//span[@class='select2 select2-container select2-container--default form-control']")
 	private WebElement ContactPersonNationality;
+	@FindBy(xpath="//li[text()='Emirati']")
+	private WebElement ContactPersonNationalityselect;
+	
+	
 	@FindBy(id="ContactPersonMobile")
 	private WebElement ContactPersonMobile;
 	@FindBy(xpath="//div[@class='choices__inner']")
@@ -64,6 +77,15 @@ public class EOIpom extends Baseclass {
 	
 	
 	
+	public WebElement getContactPersonNationalityselect() {
+		return ContactPersonNationalityselect;
+	}
+	public WebElement getCountryofIncorporationdropdown() {
+		return CountryofIncorporationdropdown;
+	}
+	public WebElement getUnitedArabEmirates() {
+		return UnitedArabEmirates;
+	}
 	public WebElement getSubmit() {
 		return submit;
 	}
@@ -103,9 +125,7 @@ public class EOIpom extends Baseclass {
 	public WebElement getDateofincorporationselection() {
 		return dateofincorporationselection;
 	}
-	public WebElement getCountryofIncorporation() {
-		return CountryofIncorporation;
-	}
+	
 	public WebElement getWebsite() {
 		return Website;
 	}

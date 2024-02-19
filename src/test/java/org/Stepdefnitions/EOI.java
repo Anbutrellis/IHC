@@ -2,6 +2,10 @@ package org.Stepdefnitions;
 
 import org.POM.EOIpom;
 import org.Uttility.Baseclass;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
 import io.cucumber.java.en.*;
 
 public class EOI extends Baseclass {
@@ -23,23 +27,25 @@ public class EOI extends Baseclass {
 
 	@When("the user provides the following Applicant Details")
 	public void the_user_provides_the_following_applicant_details() {
-		sendkeys(e.getCompanyname(), "Aster Pharmacy");
+		sendkeys(e.getCompanyname(), "Trellis Logistic");
 		sendkeys(e.getCompanypoboxno(), "735686769287");
 		sendkeys(e.getCity(), "dubai");
-		sendkeys(e.getAddress(), "ENOC site 1086 petrol pump Emirates Hills 3 Opposite to Emirates International School Meadows Dubai - United Arab Emirates");
+		sendkeys(e.getAddress(),
+				"ENOC site 1086 petrol pump Emirates Hills 3 Opposite to Emirates International School Meadows Dubai - United Arab Emirates");
 		click(e.getCountry());
 		click(e.getCountryselect());
 		sendkeys(e.getPhone(), "98676757655");
-		sendkeys(e.getEmail(), "g2d0m6ztah@tippabble.com");
 		click(e.getDateofincorporation());
 		click(e.getDateofincorporationselection());
-		selectption("bytext", e.getCountryofIncorporation(), "United Arab Emirates");
+		click(e.getCountryofIncorporationdropdown());
+		click(e.getUnitedArabEmirates());
 
 		sendkeys(e.getWebsite(), "www.test.com");
 		sendkeys(e.getContactPersonName(), "Victor");
-		sendkeys(e.getContactPersonEmail(), "g2d0m6ztah@tippabble.com");
+		sendkeys(e.getContactPersonEmail(), "t3xvhq33ds@skygazerhub.com");
 		sendkeys(e.getContactPersonAddress(), "25,Arcot road,Chennai");
-		selectption("bytext", e.getContactPersonNationality(), "Indian");
+		click(e.getContactPersonNationality());
+		click(e.getContactPersonNationalityselect());
 
 		sendkeys(e.getContactPersonMobile(), "873676209270");
 
@@ -68,43 +74,46 @@ public class EOI extends Baseclass {
 		click(e.getSubmit());
 
 	}
+
 	@When("the user provides the following Applicant Details for Commercial")
 	public void the_user_provides_the_following_applicant_details_for_commercial() {
 		sendkeys(e.getCompanyname(), "Aster Pharmacy");
 		sendkeys(e.getCompanypoboxno(), "735686769287");
 		sendkeys(e.getCity(), "dubai");
-		sendkeys(e.getAddress(), "ENOC site 1086 petrol pump Emirates Hills 3 Opposite to Emirates International School Meadows Dubai - United Arab Emirates");
+		sendkeys(e.getAddress(),
+				"ENOC site 1086 petrol pump Emirates Hills 3 Opposite to Emirates International School Meadows Dubai - United Arab Emirates");
 		click(e.getCountry());
 		click(e.getCountryselect());
+
 		sendkeys(e.getPhone(), "98676757655");
-		sendkeys(e.getEmail(), "g2d0m6ztah@tippabble.com");
 
 		sendkeys(e.getWebsite(), "www.test.com");
 		sendkeys(e.getContactPersonName(), "Victor");
-		sendkeys(e.getContactPersonEmail(), "g2d0m6ztah@tippabble.com");
+		sendkeys(e.getContactPersonEmail(), "b6reqy855u@greencafe24.com");
 		sendkeys(e.getContactPersonAddress(), "25,Arcot road,Chennai");
-		selectption("bytext", e.getContactPersonNationality(), "Indian");
+		click(e.getContactPersonNationality());
+		click(e.getContactPersonNationalityselect());
 
 		sendkeys(e.getContactPersonMobile(), "873676209270");
-	 
+
 	}
-	
+
 	@When("the user selects Company Type as Branch of commercial company")
 	public void the_user_selects_company_type_as_branch_of_commercial_company() {
 
 		click(e.getCompanytype().get(1));
 	}
-	
+
 	@When("the user selects Company Type as Commercial company FZ-LLC \\(Individual)")
 	public void the_user_selects_company_type_as_commercial_company_fz_llc_individual() {
-	  
+
 		click(e.getCompanytype().get(2));
 	}
-	
+
 	@When("the user selects Company Type as Commercial company FZ-LLC \\(Corporate)")
 	public void the_user_selects_company_type_as_commercial_company_fz_llc_corporate() {
-	 
+
 		click(e.getCompanytype().get(3));
 	}
-	
+
 }
