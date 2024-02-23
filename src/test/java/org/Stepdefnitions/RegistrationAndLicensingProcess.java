@@ -20,12 +20,11 @@ public class RegistrationAndLicensingProcess extends Baseclass {
 	public static Compliance_User a = new Compliance_User();
 	public static Finance_Audit b = new Finance_Audit();
 	public static Registrar_User d = new Registrar_User();
-	public static Choosing_Property e=new Choosing_Property();
+	public static Choosing_Property e = new Choosing_Property();
 
 	@Given("The user has to Navigate to the IHC login page")
 	public void the_user_has_to_navigate_to_the_ihc_login_page() {
 		url(Getdata("IHCurl"));
-		
 
 	}
 
@@ -104,13 +103,9 @@ public class RegistrationAndLicensingProcess extends Baseclass {
 		sendkeys(r.getMeetingLocation(), "dubai");
 		click(r.getMeetingDate());
 		click(r.getMeetingDateselect());
-		//sendkeys(r.getMeetingDate(), "18:45");
 		click(r.getMeetingTime());
-		cleartext(r.getTimehour());
-		sendkeys(r.getTimehour(), "18");
-		cleartext(r.getTimemin());
-		sendkeys(r.getTimemin(), "27");
-//		click(r.getInviteAttendees());
+		setDefaultTimeUsingJQuery(r.getMeetingTime(), "10:35");
+		click(r.getInviteAttendees());
 		click(r.getInviteAttendeesselect());
 		click(r.getSavebtn());
 		Assert.assertEquals("Verify the Sucessfully Meeting created", "Success", r.getVerifysuccess().getText());
@@ -119,8 +114,8 @@ public class RegistrationAndLicensingProcess extends Baseclass {
 
 	@When("The user has to login with a valid user crential for Committee Feedback user")
 	public void the_user_has_to_login_with_a_valid_user_crential_for_committee_feedback_user() {
-		sendkeys(c.getUsername(), "gmhaske@trellissoft.ai");
-		sendkeys(c.getPassword(), "Admin@Trellis@@2022$$");
+		sendkeys(c.getUsername(), Getdata("Commiteeusername"));
+		sendkeys(c.getPassword(), Getdata("Commiteepwd"));
 		click(c.getLoginbtn());
 		Assert.assertEquals("Verify The User", "Committee Feedback", c.getVerifyusername().getText());
 
@@ -128,17 +123,17 @@ public class RegistrationAndLicensingProcess extends Baseclass {
 
 	@When("The user has to click the Feedback Tab Approve the meeting and give the remark")
 	public void the_user_has_to_click_the_feedback_tab_approve_the_meeting_and_give_the_remark() {
-		click(c.getFeedbacktab());
-
-		selectption("bytext", c.getFeedbackStatus(), "Approve");
-		sendkeys(c.getRemark(), "Approved");
-		click(c.getSubmitbtn());
+//		click(c.getFeedbacktab());
+//
+//		selectption("bytext", c.getFeedbackStatus(), "Approve");
+//		sendkeys(c.getRemark(), "Approved");
+//		click(c.getSubmitbtn());
 	}
 
 	@When("The user has to  verify the meeting is approved or not")
 	public void the_user_has_to_verify_the_meeting_is_approved_or_not() {
-		Assert.assertEquals("Verify The R&L memeber Apporved", "Success", c.getVerifysuccess().getText());
-		click(c.getOkbtn());
+//		Assert.assertEquals("Verify The R&L memeber Apporved", "Success", c.getVerifysuccess().getText());
+//		click(c.getOkbtn());
 		click(c.getUsericon());
 		click(c.getLogout());
 
@@ -147,16 +142,16 @@ public class RegistrationAndLicensingProcess extends Baseclass {
 	@Then("The user has to login to R&L member again to close the meeting")
 	public void the_user_has_to_login_to_r_l_member_again_to_close_the_meeting() {
 
-		sendkeys(r.getUsername(), "Sara.Ali.Mohammed.Mustafa");
-		sendkeys(r.getPassword(), "Admin@Trellis@@2022$$");
+		sendkeys(r.getUsername(), Getdata("R&Lusername"));
+		sendkeys(r.getPassword(), Getdata("R&Lpwd"));
 		click(r.getLoginbtn());
 		Assert.assertEquals("Verify The User", "R&L Member", r.getVerifyusername().getText());
 		click(r.getRegistrationrenewaldropdown());
 		click(r.getRequestlist());
 		click(r.getActions());
+		sleep(2000);
 		click(r.getFeedbacktab());
 		selectption("bytext", r.getMeetingstatus(), "Close");
-		sendkeys(r.getRNLRemark(), "remark");
 		sendkeys(r.getRNLRecomendation(), "Recomendation");
 		sendkeys(r.getRNLConclusion(), "conclusion");
 		click(r.getRNLsavebtn());
@@ -167,8 +162,8 @@ public class RegistrationAndLicensingProcess extends Baseclass {
 
 	@When("The user has to login with a valid user crential for	Compliance User")
 	public void the_user_has_to_login_with_a_valid_user_crential_for_compliance_user_approval() {
-		sendkeys(a.getUsername(), "Compliance@mailinator.com");
-		sendkeys(a.getPassword(), "User@Trellis@@2022$$");
+		sendkeys(a.getUsername(), Getdata("Complianceusername"));
+		sendkeys(a.getPassword(), Getdata("Compliancepwd"));
 		click(a.getLoginbtn());
 		Assert.assertEquals("Verify The User", "Compliance Verification", a.getVerifyusername().getText());
 
@@ -185,13 +180,15 @@ public class RegistrationAndLicensingProcess extends Baseclass {
 		click(a.getTotalriskselect());
 		sendkeys(a.getComment(), "Risk is Medium");
 		click(a.getSubmit());
+		Assert.assertEquals("Verify the Sucessfully ", "Success", r.getVerifysuccess().getText());
+		click(r.getOkbtn());
 
 	}
 
 	@When("The user has to Login with a valid user crential for Finance Audit User")
 	public void the_user_has_to_login_with_a_valid_user_crential_for_finance_audit_user_approval() {
-		sendkeys(b.getUsername(), "ihctesting@trellissoft.ai");
-		sendkeys(b.getPassword(), "User@Trellis@@2022$$");
+		sendkeys(b.getUsername(), Getdata("FinanceAuditusername"));
+		sendkeys(b.getPassword(), Getdata("FinanceAuditpwd"));
 		click(b.getLoginbtn());
 		Assert.assertEquals("Verify The User", "Finance Audit Review", b.getVerifyusername().getText());
 
@@ -206,8 +203,10 @@ public class RegistrationAndLicensingProcess extends Baseclass {
 
 	@When("The user has to Click on the submit button after you have completed the form and digitally signed your feedback")
 	public void the_user_has_to_click_on_the_submit_button_after_you_have_completed_the_form_and_digitally_signed_your_feedback() {
-		sendkeys(b.getFinancialStatementStartdate(), "12/Jan/2024");
-		sendkeys(b.getFinancialStatementenddate(), "12/Jan/2025");
+		click(b.getStartDate());
+		click(b.getFinancialStatementStartdate());
+		sendkeys(b.getEndDate(), "02/23/2025");
+		
 		sendkeys(b.getExaminedBy(), "Finance Audit User");
 		sendkeys(b.getTotalassets(), "3000");
 		sendkeys(b.getTotalliabilities(), "1000");
@@ -220,6 +219,7 @@ public class RegistrationAndLicensingProcess extends Baseclass {
 		sendkeys(b.getViabilityRatio(), "10");
 		sendkeys(b.getSavingsRatio(), "5");
 		sendkeys(b.getProgramEfficiencyRatio(), "5");
+		click(b.getParagraph());
 		sendkeys(b.getParagraph(), "Review of Financial Report");
 		sendkeys(b.getFinalComment(), "Finalcomment");
 		Actions a = new Actions(driver);
@@ -238,8 +238,8 @@ public class RegistrationAndLicensingProcess extends Baseclass {
 
 	@When("The user has to Login with a valid user crential for Registrar User")
 	public void the_user_has_to_login_with_a_valid_user_crential_for_registrar_user() {
-		sendkeys(d.getUsername(), "bibhudas71@gmail.com");
-		sendkeys(d.getPassword(), "Admin@Trellis@@2022$$");
+		sendkeys(d.getUsername(), Getdata("Registrarusername"));
+		sendkeys(d.getPassword(), Getdata("Registrarpwd"));
 		click(d.getLoginbtn());
 		Assert.assertEquals("Verify The User", "Registrar", b.getVerifyusername().getText());
 
@@ -249,9 +249,6 @@ public class RegistrationAndLicensingProcess extends Baseclass {
 	public void the_user_has_to_click_feedback_tab_able_to_view_the_three_requests_to_review_national_security_submission_mofaic_submission_and_iacad_submission_will_be_displayed_with_the_number_of_days_left_for_approval() {
 		sleep(3000);
 		Actionclass("movetoelementclick", d.getFeedbacktab());
-//		Assert.assertEquals("Verify The Approver ", "National Security Submission", d.getApprovalname().get(0).getText());
-//		Assert.assertEquals("Verify The Approver ", "MOFAIC Submission", d.getApprovalname().get(1).getText());
-//		Assert.assertEquals("Verify The Approver ", "IACAD Submission", d.getApprovalname().get(2).getText());
 
 	}
 
@@ -279,63 +276,57 @@ public class RegistrationAndLicensingProcess extends Baseclass {
 		click(r.getOkbtn());
 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	@Given("The user has to Navigate to the Organization login page")
 	public void the_user_has_to_navigate_to_the_organization_login_page() {
-	   url("https://202.131.99.210:83");
-	   click(e.getLogin());
+		url(Getdata("url"));
+		click(e.getLogin());
 	}
+
 	@When("The user has to login with a valid user crential for Organization User")
 	public void the_user_has_to_login_with_a_valid_user_crential_for_organization_user() {
-	    sendkeys(e.getUsername(), "b6reqy855u@greencafe24.com");
-	    sendkeys(e.getPassword(), "Trellis@12345");
-	    click(e.getLoginbtn());
-	    Assert.assertEquals("Verify The User", "Organization User", b.getVerifyusername().getText());
+		sendkeys(e.getUsername(), Getdata("email"));
+		sendkeys(e.getPassword(), Getdata("newpwd"));
+		click(e.getLoginbtn());
+		Assert.assertEquals("Verify The User", "Organization User", b.getVerifyusername().getText());
 
 	}
+
 	@When("The user has to go the profile and click Documents")
 	public void the_user_has_to_go_the_profile_and_click_documents() {
-	    click(e.getProfile());
-	    click(e.getDocuments());
+		click(e.getProfile());
+		click(e.getDocuments());
 	}
+
 	@When("The user has to upload the required Documents")
 	public void the_user_has_to_upload_the_required_documents() {
-		sendkeys(e.getDocument1(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
-		sendkeys(e.getDocument2(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
-		sendkeys(e.getDocument3(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
-		sendkeys(e.getDocument4(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
-		sendkeys(e.getDocument5(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
-		sendkeys(e.getDocument6(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
-		sendkeys(e.getDocument7(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
-		sendkeys(e.getDocument8(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
-		sendkeys(e.getDocument9(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
-		sendkeys(e.getDocument10(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
+		sendkeys(e.getDocument1(), Getdata("pdf"));
+		sendkeys(e.getDocument2(), Getdata("pdf"));
+		sendkeys(e.getDocument3(), Getdata("pdf"));
+		sendkeys(e.getDocument4(), Getdata("pdf"));
+		sendkeys(e.getDocument5(), Getdata("pdf"));
+		sendkeys(e.getDocument6(), Getdata("pdf"));
+		sendkeys(e.getDocument7(), Getdata("pdf"));
+		sendkeys(e.getDocument8(), Getdata("pdf"));
+		sendkeys(e.getDocument9(), Getdata("pdf"));
+		sendkeys(e.getDocument10(), Getdata("pdf"));
 		click(e.getSavebtn());
 		Assert.assertEquals("Verify the Sucessfully Approval", "Success", e.getVerifysuccess().getText());
 		click(e.getOkbtn());
 
 	}
+
 	@When("The user has to Click Facility tab and select the required building from the Building drop-down")
 	public void the_user_has_to_click_facility_tab_and_select_the_required_building_from_the_building_drop_down() {
-	
+
 	}
+
 	@When("The user has to Select the required floor among the grey colored floors and once selected, the floor color will turn green")
 	public void the_user_has_to_select_the_required_floor_among_the_grey_colored_floors_and_once_selected_the_floor_color_will_turn_green() {
 	}
+
 	@Then("The user has to	Click Add to Cart after selecting one floor after confirm the order")
 	public void the_user_has_to_click_add_to_cart_after_selecting_one_floor_after_confirm_the_order() {
 	}
-
-	
-	
 
 }

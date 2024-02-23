@@ -57,13 +57,13 @@ public class Registrar_User extends Baseclass{
 	@FindBy(xpath="(//button[text()='Update'])[1]")
 	private WebElement update;
 	
-	@FindBy(id="btnNSecurity")
+	@FindBy(id="tnNSecurity")
 	private WebElement btnNSecuritysubmit;
 	
-	@FindBy(id="btnMofaic")
+	@FindBy(id="tnMofaic")
 	private WebElement btnMofaicsubmit;
 	
-	@FindBy(id="btnIacad")
+	@FindBy(id="tnIacad")
 	private WebElement btnIacadsubmit;
 	
 	

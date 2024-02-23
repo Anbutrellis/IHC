@@ -224,8 +224,26 @@ return text;
 	public static void cleartext(WebElement e) {
 		e.clear();
 		
-
 	}
+	 public static void setDefaultTimeUsingJQuery( WebElement e, String data) {
+		 JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].setAttribute('default-time','"+data+"')", e);
+		  
+	 
+	 }	
 	
 	
+	
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
 }
