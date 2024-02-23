@@ -28,7 +28,7 @@ public class Finance_user extends Baseclass {
 	private WebElement verifythecompanyname;
 	@FindBy(xpath = "//button[@id='dropdownMenuReference']")
 	private WebElement dropdownMenuReference;
-	@FindBy(xpath = "//a[text()='Approve']")
+	@FindBy(xpath = "//a[text()='Approved']")
 	private WebElement Approve;
 	@FindBy(id="statusfeedback")
 	private WebElement statusfeedback;

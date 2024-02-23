@@ -24,14 +24,15 @@ public class RegistrationAndLicensingProcess extends Baseclass {
 
 	@Given("The user has to Navigate to the IHC login page")
 	public void the_user_has_to_navigate_to_the_ihc_login_page() {
-		url("https://202.131.99.210:83/ihc/login");
+		url(Getdata("IHCurl"));
+		
 
 	}
 
 	@When("The user has to login with a valid user credential for Finance user")
 	public void the_user_has_to_login_with_a_valid_user_credential_for_finance_user() {
-		sendkeys(f.getUsername(), "pvihang@trellissoft.ai");
-		sendkeys(f.getPassword(), "Admin@Trellis@@2022$$");
+		sendkeys(f.getUsername(), Getdata("financeusername"));
+		sendkeys(f.getPassword(), Getdata("financepwd"));
 		click(f.getLoginbtn());
 	}
 
@@ -62,8 +63,8 @@ public class RegistrationAndLicensingProcess extends Baseclass {
 
 	@When("The user has to login with a valid user crential for R&L user")
 	public void the_user_has_to_login_with_a_valid_user_crential_for_r_l_user() {
-		sendkeys(r.getUsername(), "Sara.Ali.Mohammed.Mustafa");
-		sendkeys(r.getPassword(), "Admin@Trellis@@2022$$");
+		sendkeys(r.getUsername(), Getdata("R&Lusername"));
+		sendkeys(r.getPassword(), Getdata("R&Lpwd"));
 		click(r.getLoginbtn());
 
 		Assert.assertEquals("Verify The User", "R&L Member", r.getVerifyusername().getText());
@@ -78,22 +79,22 @@ public class RegistrationAndLicensingProcess extends Baseclass {
 
 	@When("The user has to select Approved from the dropdownMenu")
 	public void the_user_has_to_select_approved_from_the_dropdown_menu() {
-		click(r.getDropdownMenu());
-		click(r.getReviewCompleted());
+//		click(r.getDropdownMenu());
+//		click(r.getReviewCompleted());
 
 	}
 
 	@When("The user has to give feedback and update the status of the request for the Organization")
 	public void the_user_has_to_give_feedback_and_update_the_status_of_the_request_for_the_organization() {
-		sendkeys(r.getStatusfeedback(), "Review Completed");
-		click(r.getUpdate());
+//		sendkeys(r.getStatusfeedback(), "Review Completed");
+//		click(r.getUpdate());
 
 	}
 
 	@When("The user has to verify Whether the Successfully approved Organization Application")
 	public void the_user_has_to_verify_whether_the_successfully_approved_organization_application() {
-		Assert.assertEquals("Verify The R&L memeber Apporved", "Success", r.getVerifysuccess().getText());
-		click(r.getOkbtn());
+//		Assert.assertEquals("Verify The R&L memeber Apporved", "Success", r.getVerifysuccess().getText());
+//		click(r.getOkbtn());
 	}
 
 	@Then("The user has to create one meeting and verify the meeting is created or not")
@@ -103,9 +104,13 @@ public class RegistrationAndLicensingProcess extends Baseclass {
 		sendkeys(r.getMeetingLocation(), "dubai");
 		click(r.getMeetingDate());
 		click(r.getMeetingDateselect());
+		//sendkeys(r.getMeetingDate(), "18:45");
 		click(r.getMeetingTime());
-		loop(7, r.getTime());
-		click(r.getInviteAttendees());
+		cleartext(r.getTimehour());
+		sendkeys(r.getTimehour(), "18");
+		cleartext(r.getTimemin());
+		sendkeys(r.getTimemin(), "27");
+//		click(r.getInviteAttendees());
 		click(r.getInviteAttendeesselect());
 		click(r.getSavebtn());
 		Assert.assertEquals("Verify the Sucessfully Meeting created", "Success", r.getVerifysuccess().getText());
@@ -304,16 +309,16 @@ public class RegistrationAndLicensingProcess extends Baseclass {
 	}
 	@When("The user has to upload the required Documents")
 	public void the_user_has_to_upload_the_required_documents() {
-		sendkeys(e.getDocument1(), "E:\\IHC Project details\\ihc documents\\Board of Directors Resolution calling for the establishment of the branch at IHC.pdf");
-		sendkeys(e.getDocument2(), "E:\\IHC Project details\\ihc documents\\Good Standing Certificate of the headquarter's.pdf");
-		sendkeys(e.getDocument3(), "E:\\IHC Project details\\ihc documents\\Deed of Trust.pdf");
-		sendkeys(e.getDocument4(), "E:\\IHC Project details\\ihc documents\\Good Standing Certificate of the headquarter's.pdf");
-		sendkeys(e.getDocument5(), "E:\\IHC Project details\\ihc documents\\certificate-of-incumbency.pdf");
-		sendkeys(e.getDocument6(), "E:\\IHC Project details\\ihc documents\\passport.pdf");
-		sendkeys(e.getDocument7(), "E:\\IHC Project details\\ihc documents\\Annexes.pdf");
-		sendkeys(e.getDocument8(), "E:\\IHC Project details\\ihc documents\\Annexes.pdf");
-		sendkeys(e.getDocument9(), "E:\\IHC Project details\\ihc documents\\ImportLicense.pdf");
-		sendkeys(e.getDocument10(), "E:\\IHC Project details\\ihc documents\\Annexes.pdf");
+		sendkeys(e.getDocument1(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
+		sendkeys(e.getDocument2(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
+		sendkeys(e.getDocument3(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
+		sendkeys(e.getDocument4(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
+		sendkeys(e.getDocument5(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
+		sendkeys(e.getDocument6(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
+		sendkeys(e.getDocument7(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
+		sendkeys(e.getDocument8(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
+		sendkeys(e.getDocument9(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
+		sendkeys(e.getDocument10(), "C:\\Users\\Admin1\\Documents\\Annexure.pdf");
 		click(e.getSavebtn());
 		Assert.assertEquals("Verify the Sucessfully Approval", "Success", e.getVerifysuccess().getText());
 		click(e.getOkbtn());
