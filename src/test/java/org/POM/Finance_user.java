@@ -21,7 +21,7 @@ public class Finance_user extends Baseclass {
 	@FindBy(id = "Rolenamespan")
 	private WebElement verifyusername;
 
-	@FindBy(xpath = "//i[@class='ri-eye-fill fs-16']")
+	@FindBy(xpath = "//td[text()='QATests']//following::i[1]")
 	private WebElement action;
 
 	@FindBy(xpath = "//a[@onclick='refreshRequestDetailview()']")

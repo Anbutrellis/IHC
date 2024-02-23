@@ -29,10 +29,16 @@ public class Finance_Audit extends Baseclass {
 	@FindBy(xpath = "//small[@class='badge badge-soft-danger']")
 	private WebElement expirydate;
 
-	@FindBy(id = "FinanceReviewReportViewModel_FinancialStatementStart")
+	@FindBy(xpath = "//td[@class='today day highlight-today']")
 	private WebElement FinancialStatementStartdate;
-
-	@FindBy(id = "FinanceReviewReportViewModel_FinancialStatementEnd")
+	
+	@FindBy(id="startDate")
+	private WebElement startDate;
+	
+	@FindBy(id="endDate")
+	private WebElement endDate;
+	
+	@FindBy(xpath = "//td[@data-date='1709683200000']")
 	private WebElement FinancialStatementenddate;
 
 	@FindBy(id = "ExaminedBy")
@@ -53,22 +59,22 @@ public class Finance_Audit extends Baseclass {
 	@FindBy(id = "FinanceReviewReportViewModel_TotalExpenses")
 	private WebElement totalexpenses;
 
-	@FindBy(id = "7")
+	@FindBy(id = "1")
 	private WebElement DebtEquityRatio;
 
-	@FindBy(id = "8")
+	@FindBy(id = "2")
 	private WebElement CurrentRatio;
 
-	@FindBy(id = "9")
+	@FindBy(id = "3")
 	private WebElement AssetTurnoverRatio;
 
-	@FindBy(id = "10")
+	@FindBy(id = "4")
 	private WebElement ViabilityRatio;
 
-	@FindBy(id = "11")
+	@FindBy(id = "5")
 	private WebElement SavingsRatio;
 
-	@FindBy(id = "12")
+	@FindBy(id = "6")
 	private WebElement ProgramEfficiencyRatio;
 
 	@FindBy(xpath = "//div[@class='ck ck-editor__main']")
@@ -85,6 +91,7 @@ public class Finance_Audit extends Baseclass {
 
 	@FindBy(xpath = "//button[text()='OK']")
 	private WebElement okbtn;
+	
 	@FindBy(id = "swal2-title")
 	private WebElement verifysuccess;
 
@@ -93,6 +100,16 @@ public class Finance_Audit extends Baseclass {
 
 	@FindBy(id = "pdfmodalopen")
 	private WebElement pdfdownload;
+	
+	
+
+	public WebElement getStartDate() {
+		return startDate;
+	}
+
+	public WebElement getEndDate() {
+		return endDate;
+	}
 
 	public WebElement getCompleted() {
 		return completed;
