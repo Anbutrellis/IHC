@@ -25,7 +25,7 @@ public class MemberEnquiryRegistration extends Baseclass {
 	private WebElement options;
 	@FindBy(xpath = "//button[@onclick='addHowDidYouHear(2)']")
 	private WebElement next1;
-	@FindBy(id = "check_2")
+	@FindBy(xpath = "//div[@class='form-check mb-1']")
 	private WebElement Formationtype;
 	@FindBy(xpath = "//button[@onclick='addFormationType(3)']")
 	private WebElement next2;
@@ -99,7 +99,7 @@ public class MemberEnquiryRegistration extends Baseclass {
 	private WebElement next3;
 	@FindBy(id = "NoOfExistingBranches")
 	private WebElement NoOfExistingBranches;
-	@FindBy(xpath = "(//input[@class='choices__input choices__input--cloned'])[2]")
+	@FindBy(xpath = "(//div[@data-type='select-multiple'])[2]")
 	private WebElement Locationofexistingbranches;
 	@FindBy(id = "choices--LocationOfExistingBranchesComma-item-choice-21")
 	private WebElement existingbranch1;
@@ -111,7 +111,7 @@ public class MemberEnquiryRegistration extends Baseclass {
 	private WebElement EstablishedCompany_Emirates;
 	@FindBy(xpath = "//button[@onclick='addCompanyInformation(5)']")
 	private WebElement next4;
-	@FindBy(xpath = "(//input[@class='choices__input choices__input--cloned'])[3]")
+	@FindBy(xpath = "(//div[@data-type='select-multiple'])[3]")
 	private WebElement CompanyActivity;
 	@FindBy(id = "choices--CompanyActivity-item-choice-2")
 	private WebElement CompanyActivitychoices1;
@@ -165,7 +165,7 @@ public class MemberEnquiryRegistration extends Baseclass {
 	private WebElement UBOSubmit;
 	@FindBy(xpath = "//button[@onclick='saveUBODetails(9)']")
 	private WebElement next8;
-	@FindBy(name = "Name")
+	@FindBy(id = "AddManagerName")
 	private WebElement AddManagerName;
 	@FindBy(id = "select2-AddManagerNationalityId-container")
 	private WebElement nationlitydropdown;
@@ -181,19 +181,21 @@ public class MemberEnquiryRegistration extends Baseclass {
 	private WebElement AddManagerMobileNo;
 	@FindBy(id = "AddManagerGender")
 	private WebElement AddManagerGender;
+	@FindBy(xpath="//option[text()='Male']")
+	private WebElement gendermale;
 	@FindBy(id = "AddManagerDesignation")
 	private WebElement AddManagerDesignation;
 	@FindBy(xpath = "//input[@name='DateOfBirth']")
 	private WebElement AddManagerDateOfBirth;
 	@FindBy(xpath = "//button[@onclick='addUpdateManager(10)']")
 	private WebElement next9;
-	@FindBy(xpath = "(//input[@aria-label='Year'])[6]")
+	@FindBy(id = "AddManagerDateOfBirth")
 	private WebElement yeardateofbirth;
-	@FindBy(xpath = "//span[@aria-label='January 30, 1987']")
+	@FindBy(xpath = "(//td[text()='2'])[1]")
 	private WebElement dateofbirthselect;
 	@FindBy(xpath = "//button[@onclick='addNatureOfBusiness(11)']")
 	private WebElement next10;
-	@FindBy(xpath = "//span[@class='flatpickr-day today']")
+	@FindBy(xpath = "//td[@class='today day highlight-today']")
 	private WebElement expirydateselect;
 	@FindBy(xpath = "//button[@onclick='markReviewCompleted(12)']")
 	private WebElement next11;
@@ -209,10 +211,63 @@ public class MemberEnquiryRegistration extends Baseclass {
 	private WebElement PassportExpiryDateyear;
 	@FindBy(xpath="//h4[text()='Registration/Renewal Steps']")
 	private WebElement Registration_renewal;
+	@FindBy(xpath="(//div[@data-type='select-one'])[2]")
+	private WebElement parentcmp;
+	@FindBy(xpath="//div[@id='choices--CountryOfParentCompany-item-choice-15']")
+	private WebElement parentcmpselect;
+	@FindBy(xpath="//button[text()='UBO Form']")
+	private WebElement uboform;
+	@FindBy(id="uBOFullName")
+	private WebElement uBOFullName;
+	@FindBy(id="uBOEmail")
+	private WebElement uBOEmail;
+	@FindBy(id="uBODesignation")
+	private WebElement uBODesignation;
+	@FindBy(id="NumberOfShares")
+	private WebElement NumberOfShares;
+	@FindBy(id="uboSubmit")
+	private WebElement uboSubmit;
 	
 	
 	
 	
+	
+	public WebElement getGendermale() {
+		return gendermale;
+	}
+
+	public WebElement getUboform() {
+		return uboform;
+	}
+
+	public WebElement getuBOFullName() {
+		return uBOFullName;
+	}
+
+	public WebElement getuBOEmail() {
+		return uBOEmail;
+	}
+
+	public WebElement getuBODesignation() {
+		return uBODesignation;
+	}
+
+	public WebElement getNumberOfShares() {
+		return NumberOfShares;
+	}
+
+	public WebElement getUboSubmit() {
+		return uboSubmit;
+	}
+
+	public WebElement getParentcmp() {
+		return parentcmp;
+	}
+
+	public WebElement getParentcmpselect() {
+		return parentcmpselect;
+	}
+
 	public WebElement getRegistration_renewal() {
 		return Registration_renewal;
 	}

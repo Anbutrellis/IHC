@@ -54,19 +54,24 @@ public class EOIpom extends Baseclass {
 	private WebElement ContactPersonAddress;
 	
 	
-	@FindBy(xpath="//span[@class='select2 select2-container select2-container--default form-control']")
+	@FindBy(xpath="//span[@aria-labelledby='select2-ContactPersonNationality-container']")
 	private WebElement ContactPersonNationality;
-	@FindBy(xpath="//li[text()='Emirati']")
-	private WebElement ContactPersonNationalityselect;
+	@FindBy(xpath="//span[@class='select2-dropdown select2-dropdown--above']//li")
+	private List<WebElement> ContactPersonNationalityselect;
 	
 	
 	@FindBy(id="ContactPersonMobile")
 	private WebElement ContactPersonMobile;
 	@FindBy(xpath="//div[@class='choices__inner']")
 	private WebElement proposedactivities;
-	@FindBy(id="choices--CompanyActivity-item-choice-1")
-	private WebElement proposedactivitiesselection1;
-	@FindBy(id="choices--CompanyActivity-item-choice-2")
+	
+	
+	@FindBy(xpath="//div[@class='choices__item choices__item--choice choices__item--selectable']")
+	private List<WebElement> proposedactivitiesselection;
+	
+	
+	
+	@FindBy(xpath="choices--CompanyActivity-item-choice-2")
 	private WebElement proposedactivitiesselection2;
 	@FindBy(id="whatServicesOrProductsOffers")
 	private WebElement WhatServicesOrProductsOffers;
@@ -77,7 +82,7 @@ public class EOIpom extends Baseclass {
 	
 	
 	
-	public WebElement getContactPersonNationalityselect() {
+	public List<WebElement> getContactPersonNationalityselect() {
 		return ContactPersonNationalityselect;
 	}
 	public WebElement getCountryofIncorporationdropdown() {
@@ -147,8 +152,8 @@ public class EOIpom extends Baseclass {
 	public WebElement getProposedactivities() {
 		return proposedactivities;
 	}
-	public WebElement getProposedactivitiesselection1() {
-		return proposedactivitiesselection1;
+	public List<WebElement> getProposedactivitiesselection() {
+		return proposedactivitiesselection;
 	}
 	public WebElement getProposedactivitiesselection2() {
 		return proposedactivitiesselection2;

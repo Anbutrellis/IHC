@@ -186,16 +186,17 @@ return text;
 			click(e);
 		}
 	}
-	public static void Getdata(String key) {
+	public static String Getdata(String key) {
 		String property =null;
 		try {
 		Properties p= new Properties();
-		FileReader r= new FileReader("/IHC_project/src/test/resources/config data/IHC.properties");
+		FileReader r= new FileReader("C:\\Users\\Admin1\\Documents\\GitHub\\IHC\\src\\test\\resources\\config data\\IHC.properties");
 		p.load(r);
 		property = p.getProperty(key);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+		return property;
 	}
 	public static void Actionclass(String options,WebElement e) {
 		Actions a = new Actions(driver);
@@ -220,7 +221,11 @@ return text;
 		}
 
 	}
-	
+	public static void cleartext(WebElement e) {
+		e.clear();
+		
+
+	}
 	
 	
 }

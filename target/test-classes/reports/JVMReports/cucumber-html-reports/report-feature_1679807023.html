@@ -74,7 +74,7 @@ $(document).ready(function() {
   <tbody>
     <tr class="info">
       <td>IHC</td>
-      <td>07 Feb 2024, 10:17</td>
+      <td>22 Feb 2024, 18:46</td>
     </tr>
   </tbody>
 </table>
@@ -128,18 +128,18 @@ $(document).ready(function() {
         <tr>
           <td class="tagname">Verify the Functionality of the Registration and Licensing Process</td>
           <td      class="passed"    >7</td>
+          <td      class="failed"    >1</td>
           <td >0</td>
           <td >0</td>
           <td >0</td>
-          <td >0</td>
-          <td class="total">7</td>
+          <td class="total">8</td>
 
-          <td  class="passed"    >1</td>
           <td >0</td>
+          <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="366276115200">6:6.276</td>
-          <td class="passed">Passed</td>
+          <td class="duration" data-value="34489966500">34.489</td>
+          <td class="failed">Failed</td>
         </tr>
         </tbody>
 
@@ -171,7 +171,7 @@ $(document).ready(function() {
 </div>
 
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Feature</span>
   <span class="name">Verify the Functionality of the Registration and Licensing Process</span>
 
@@ -187,18 +187,18 @@ $(document).ready(function() {
 
 <div class="tags indention">
     <b>Tags:</b>
-       <a href="report-tag_2147546721.html">@13</a>
+       <a href="report-tag_2147485687.html">@8</a>
 </div>
 
 
-  <span class="lead-duration duration">6:6.276</span>
+  <span class="lead-duration duration">34.489</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario</span>
-  <span class="name">Verify The Functionality of the Choosing Property by Organization User</span>
+  <span class="name">Verify The Functionality of the R&amp;L User Approve for Organization user</span>
 
 
      <i class="chevron fa fa-fw"></i>
@@ -207,7 +207,7 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-1" class="collapse collapsable-details ">
+  <div id="element-1" class="collapse collapsable-details  in ">
 
 
   <div class="inner-level hooks-element-before">
@@ -229,7 +229,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">org.Stepdefnitions.Hooksclass.Beforescenario()</span>
 
-  <span class="lead-duration duration">11.924</span>
+  <span class="lead-duration duration">8.045</span>
 
           </div>
 
@@ -246,9 +246,9 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-3">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-3">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -258,15 +258,15 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-3" class="inner-level collapse collapsable-details ">
+  <div id="steps-3" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
 <div class="brief step-name-Given passed">
   <span class="keyword indention">Given</span>
-  <span class="name">The user has to Navigate to the Organization login page</span>
+  <span class="name">The user has to Navigate to the IHC login page</span>
 
-  <span class="lead-duration duration">3:36.253</span>
+  <span class="lead-duration duration">3.931</span>
 
 </div>
 
@@ -291,36 +291,9 @@ $(document).ready(function() {
 
 <div class="brief step-name-When passed">
   <span class="keyword indention">When</span>
-  <span class="name">The user has to login with a valid user crential for Organization User</span>
+  <span class="name">The user has to login with a valid user crential for R&amp;L user</span>
 
-  <span class="lead-duration duration">48.376</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">The user has to go the profile and click Documents</span>
-
-  <span class="lead-duration duration">1:40.870</span>
+  <span class="lead-duration duration">2.524</span>
 
 </div>
 
@@ -345,9 +318,9 @@ $(document).ready(function() {
 
 <div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
-  <span class="name">The user has to upload the required Documents</span>
+  <span class="name">The user has to click the  Registration/Renewal dropdown and click the Request List</span>
 
-  <span class="lead-duration duration">0.776</span>
+  <span class="lead-duration duration">2.352</span>
 
 </div>
 
@@ -372,7 +345,34 @@ $(document).ready(function() {
 
 <div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
-  <span class="name">The user has to Click Facility tab and select the required building from the Building drop-down</span>
+  <span class="name">The user has to click the action of the eye icon for the required user to be approved</span>
+
+  <span class="lead-duration duration">2.728</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">The user has to select Approved from the dropdownMenu</span>
 
   <span class="lead-duration duration">0.000</span>
 
@@ -399,7 +399,7 @@ $(document).ready(function() {
 
 <div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
-  <span class="name">The user has to Select the required floor among the grey colored floors and once selected, the floor color will turn green</span>
+  <span class="name">The user has to give feedback and update the status of the request for the Organization</span>
 
   <span class="lead-duration duration">0.000</span>
 
@@ -424,11 +424,38 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">The user has to verify Whether the Successfully approved Organization Application</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then failed">
   <span class="keyword indention">Then</span>
-  <span class="name">The user has to	Click Add to Cart after selecting one floor after confirm the order</span>
+  <span class="name">The user has to create one meeting and verify the meeting is created or not</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">22.953</span>
 
 </div>
 
@@ -436,6 +463,28 @@ $(document).ready(function() {
 
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
+          <a>org.openqa.selenium.TimeoutException:</a>
+      </div>
+      <div id="msg-4" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[FirefoxDriver: firefox on windows (e82b9818-410d-44d3-9a13-f6c4398ab855)] -&gt; xpath: //div[text()='gmhaske@trellissoft.ai']] (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.16.1', revision: '9b4c83354e'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 122.0.1, moz:accessibilityChecks: false, moz:buildID: 20240205133611, moz:debuggerAddress: 127.0.0.1:41389, moz:geckodriverVersion: 0.34.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 18064, moz:profile: C:\Users\Admin1\AppData\Loc..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://127.0.0.1:41389/devtoo..., se:cdpVersion: 85.0, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e82b9818-410d-44d3-9a13-f6c4398ab855
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at org.Uttility.Baseclass.click(Baseclass.java:93)
+	at org.Stepdefnitions.RegistrationAndLicensingProcess.the_user_has_to_create_one_meeting_and_verify_the_meeting_is_created_or_not(RegistrationAndLicensingProcess.java:114)
+	at &#10045;.The user has to create one meeting and verify the meeting is created or not(file:///C:/Users/Admin1/Documents/GitHub/IHC/src/test/resources/features/Registration%20And%20Licensing%20Process.feature:27)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -455,7 +504,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-4">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-5">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -467,13 +516,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-4" class="inner-level collapse collapsable-details ">
+    <div id="after-5" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">org.Stepdefnitions.Hooksclass.Afterscenario(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.149</span>
+  <span class="lead-duration duration">0.237</span>
 
           </div>
 
@@ -482,6 +531,21 @@ $(document).ready(function() {
 
 
 
+  <div class="embeddings inner-level">
+  <div class="embedding indention">
+    <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
+      <a>Screenshot</a>
+      <a href="embeddings/embedding_-135817388.png" download target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-6" class="collapse collapsable-details ">
+      <div class="embedding-content">
+        <img src="embeddings/embedding_-135817388.png">
+      </div>
+    </div>
+  </div>
+  </div>
 
         </div>
     </div>

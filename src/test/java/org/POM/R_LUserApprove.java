@@ -65,10 +65,12 @@ public class R_LUserApprove extends Baseclass {
 	private WebElement InviteAttendeesselect;
 	@FindBy(xpath = "//button[@onclick='scheduleMeeting(0)']")
 	private WebElement savebtn;
-	@FindBy(xpath = "(//span[@class='flatpickr-day today'])[1]")
+	@FindBy(xpath = "//td[@class='today day highlight-today']")
 	private WebElement MeetingDateselect;
-	@FindBy(xpath="(//span[@class='arrowUp'])[2]")
-	private WebElement time;
+	@FindBy(xpath="//input[@class='numInput flatpickr-hour']")
+	private WebElement timehour;
+	@FindBy(xpath="//input[@class='numInput flatpickr-minute']")
+	private WebElement timemin;
 	@FindBy(xpath="(//a[@class='nav-link profile fw-semibold'])[2]")
 	private WebElement feedbacktab;
 	@FindBy(id="RNLFeedbackStatus")
@@ -106,8 +108,11 @@ public class R_LUserApprove extends Baseclass {
 		return RNLConclusion;
 	}
 
-	public WebElement getTime() {
-		return time;
+	public WebElement getTimehour() {
+		return timehour;
+	}
+	public WebElement getTimemin() {
+		return timemin;
 	}
 
 	public WebElement getMeetingDateselect() {

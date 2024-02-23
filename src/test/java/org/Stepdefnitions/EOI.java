@@ -13,8 +13,8 @@ public class EOI extends Baseclass {
 
 	@Given("the user is on the EOI form page")
 	public void the_user_is_on_the_eoi_form_page() {
-		url("https://202.131.99.210:82/");
-
+		
+		url(Getdata("url"));
 		click(e.getEOI());
 
 	}
@@ -22,12 +22,12 @@ public class EOI extends Baseclass {
 	@When("the user selects Company Type as Branch of Humanitarian organization")
 	public void the_user_selects_company_type_as_branch_of_humanitarian_organization() {
 
-		click(e.getCompanytype().get(0));
+		click(e.getCompanytype().get(1));
 	}
 
 	@When("the user provides the following Applicant Details")
 	public void the_user_provides_the_following_applicant_details() {
-		sendkeys(e.getCompanyname(), "Trellis Logistic");
+		sendkeys(e.getCompanyname(), "QATests");
 		sendkeys(e.getCompanypoboxno(), "735686769287");
 		sendkeys(e.getCity(), "dubai");
 		sendkeys(e.getAddress(),
@@ -35,17 +35,19 @@ public class EOI extends Baseclass {
 		click(e.getCountry());
 		click(e.getCountryselect());
 		sendkeys(e.getPhone(), "98676757655");
+		sendkeys(e.getWebsite(), "www.test.com");
 		click(e.getDateofincorporation());
 		click(e.getDateofincorporationselection());
 		click(e.getCountryofIncorporationdropdown());
 		click(e.getUnitedArabEmirates());
 
-		sendkeys(e.getWebsite(), "www.test.com");
+		
 		sendkeys(e.getContactPersonName(), "Victor");
-		sendkeys(e.getContactPersonEmail(), "t3xvhq33ds@skygazerhub.com");
+		sendkeys(e.getContactPersonEmail(), Getdata("email"));
 		sendkeys(e.getContactPersonAddress(), "25,Arcot road,Chennai");
+		sleep(2000);
 		click(e.getContactPersonNationality());
-		click(e.getContactPersonNationalityselect());
+		Actionclass("movetoelementclick", e.getContactPersonNationalityselect().get(3));
 
 		sendkeys(e.getContactPersonMobile(), "873676209270");
 
@@ -54,8 +56,9 @@ public class EOI extends Baseclass {
 	@When("the user enters a brief description of proposed activities")
 	public void the_user_enters_a_brief_description_of_proposed_activities() {
 		click(e.getProposedactivities());
-		click(e.getProposedactivitiesselection1());
-		click(e.getProposedactivitiesselection2());
+		sleep(2000);
+		click(e.getProposedactivitiesselection().get(4));
+		click(e.getProposedactivitiesselection().get(6));
 
 	}
 
@@ -92,7 +95,7 @@ public class EOI extends Baseclass {
 		sendkeys(e.getContactPersonEmail(), "b6reqy855u@greencafe24.com");
 		sendkeys(e.getContactPersonAddress(), "25,Arcot road,Chennai");
 		click(e.getContactPersonNationality());
-		click(e.getContactPersonNationalityselect());
+		click(e.getContactPersonNationalityselect().get(3));
 
 		sendkeys(e.getContactPersonMobile(), "873676209270");
 
