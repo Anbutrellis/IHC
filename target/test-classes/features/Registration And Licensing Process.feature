@@ -2,7 +2,8 @@ Feature: Verify the Functionality of the Registration and Licensing Process
 
 
 
-   @7 
+   @7
+   @Regression 
   Scenario: Verify The Functionality of the Finance User Approve for Organization user
   
   Given The user has to Navigate to the IHC login page
@@ -15,6 +16,7 @@ Feature: Verify the Functionality of the Registration and Licensing Process
   
   
   @8
+  @Regression
   Scenario: Verify The Functionality of the R&L User Approve for Organization user
   
   Given The user has to Navigate to the IHC login page
@@ -29,6 +31,7 @@ Feature: Verify the Functionality of the Registration and Licensing Process
   
   
   @9
+  @Regression
   Scenario: Verify The Functionality of the Committee Feedback user 
   
   Given The user has to Navigate to the IHC login page
@@ -40,6 +43,7 @@ Feature: Verify the Functionality of the Registration and Licensing Process
   
   
   @10
+  @Regression
   Scenario: Verify The Functionality of the	Compliance User Approval
   
   Given The user has to Navigate to the IHC login page
@@ -50,6 +54,7 @@ Feature: Verify the Functionality of the Registration and Licensing Process
   
   
   @11
+  @Regression
   Scenario: Verify The Functionality of the Finance Audit User Approval
   
   Given The user has to Navigate to the IHC login page
@@ -61,6 +66,7 @@ Feature: Verify the Functionality of the Registration and Licensing Process
   
   
   @12
+  @Regression
   Scenario: Verify The Functionality of the Registrar User Approval
   
   Given The user has to Navigate to the IHC login page
@@ -72,6 +78,7 @@ Feature: Verify the Functionality of the Registration and Licensing Process
   Then 	The user has to make the final approval for the Application and give remark for it 
   
   @13
+  @Regression 
   Scenario: Verify The Functionality of the Choosing Property by Organization User
   
   Given The user has to Navigate to the Organization login page

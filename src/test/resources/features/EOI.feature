@@ -1,5 +1,6 @@
 Feature: Expression of Interest (EOI) Form Submission
     @1
+    @Regression
   Scenario: User submits EOI form successfully as the Branch of Humanitarian organization
     Given the user is on the EOI form page
     When the user selects Company Type as Branch of Humanitarian organization

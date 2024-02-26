@@ -1,6 +1,7 @@
 Feature: Verify the Functionality of the Member Enquiry Registration
 
     @6
+    @Regression
   Scenario: Verify The Registration process of Member Enquiry Details 
   
   Given The user have login with vaild credential organization user

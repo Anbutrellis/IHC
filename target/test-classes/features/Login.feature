@@ -1,5 +1,6 @@
 Feature: Verify the Functionality of the Organization Login
-   @5 
+   @5
+   @Regression
   Scenario: Successfully Login
   
   Given the User is on the IHC Homepage
